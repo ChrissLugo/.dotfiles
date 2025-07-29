@@ -11,7 +11,12 @@ sudo pacman -S --needed --noconfirm swww
 sudo pacman -S --needed --noconfirm otf-codenewroman-nerd
 sudo pacman -S --needed --noconfirm nwg-displays
 sudo pacman -S --needed --noconfirm blueman  
-sudo pacman -S --needed --noconfirm pavucontrol 
+sudo pacman -S --needed --noconfirm pavucontrol
+sudo pacman -S --needed --noconfirm brightnessctl
+sudo pacman -S --needed --noconfirm networkmanager
+sudo pacman -S --needed --noconfirm network-manager-applet
+sudo pacman -S --needed --noconfirm nm-connection-editor
+sudo pacman -S --needed --noconfirm dunst
 yay -S --noconfirm hellwal 
 yay -S --noconfirm waypaper
 yay -S --noconfirm python-pywalfox
@@ -23,6 +28,10 @@ rm -rf "$HOME/.config/hypr"
 ln -srv "$DOTFILES_DIR/configs/hypr" "$HOME/.config/hypr"
 hyprctl reload
 echo "Listo"
+
+#Red
+sudo systemctl enable --now NetworkManager
+nm-applet --indicator
 
 #Waypaper
 echo "Aplicando configuraciones de Waypaper..."
