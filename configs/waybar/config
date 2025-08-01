@@ -17,7 +17,9 @@
         "custom/separator1",
         "bluetooth",
         "custom/separator1",
-        "pulseaudio"
+        "pulseaudio",
+        "custom/separator1",
+        "battery"
     ],
     "hyprland/workspaces": {
         "format": "{icon}",

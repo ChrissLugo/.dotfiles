@@ -71,11 +71,16 @@ rm -rf "$HOME/.config/kitty"
 ln -srv "$DOTFILES_DIR/configs/kitty" "$HOME/.config/kitty"
 echo "Listo"
 
+#Fuentes
+echo "Aplicando configuraciones de las Fuentes..."
+rm -rf "$HOME/.local/share/fonts"
+ln -srv "$DOTFILES_DIR/configs/fonts" "$HOME/.local/share/fonts"
+echo "Listo"
+
 #Cambiamos Fondo de Pantalla
 swww-daemon &
 swww img $DOTFILES_DIR/configs/wallpaper.jpg
 hellwal -i $DOTFILES_DIR/configs/wallpaper.jpg --neon-mode --bright-offset 1 && pkill -USR2 waybar & pywalfox update &
-
 
 
 
