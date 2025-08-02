@@ -3,6 +3,10 @@ set -euo pipefail
 #Variables
 DOTFILES_DIR=$(pwd)
 
+#Instalar YAY
+sudo pacman -S --needed --noconfirm base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+cd ..
+
 #Instalar programas necesarios
 sudo pacman -S --needed --noconfirm cava
 sudo pacman -S --needed --noconfirm rofi-wayland
@@ -17,6 +21,8 @@ sudo pacman -S --needed --noconfirm networkmanager
 sudo pacman -S --needed --noconfirm network-manager-applet
 sudo pacman -S --needed --noconfirm nm-connection-editor
 sudo pacman -S --needed --noconfirm dunst
+sudo pacman -S --needed --noconfirm waybar
+sudo pacman -S --needed --noconfirm nautilus
 yay -S --noconfirm hellwal 
 yay -S --noconfirm waypaper
 yay -S --noconfirm python-pywalfox
@@ -26,8 +32,21 @@ yay -S --noconfirm python-pywalfox
 echo "Aplicando configuraciones de Hyprland..."
 rm -rf "$HOME/.config/hypr"
 ln -srv "$DOTFILES_DIR/configs/hypr" "$HOME/.config/hypr"
-hyprctl reload
 echo "Listo"
+
+#Iconos
+echo "Aplicando iconos..."
+rm -rf "$HOME/.local/share/icons"
+ln -srv "$DOTFILES_DIR/configs/icons" "$HOME/.local/share"
+
+gsettings set org.gnome.desktop.interface icon-theme "kora"
+
+echo "Listo"
+
+#Cursor
+hyprctl setcursor macOS 25
+
+hyprctl reload
 
 #Red
 sudo systemctl enable --now NetworkManager
@@ -81,7 +100,7 @@ echo "Listo"
 swww-daemon &
 swww img $DOTFILES_DIR/configs/wallpaper.jpg
 hellwal -i $DOTFILES_DIR/configs/wallpaper.jpg --neon-mode --bright-offset 1 && pkill -USR2 waybar & pywalfox update &
-
+waybar &
 
 
 
