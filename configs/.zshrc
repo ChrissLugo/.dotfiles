@@ -113,7 +113,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+# source <(ng completion script)
 
 #zoxide
 eval "$(zoxide init zsh)"

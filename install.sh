@@ -14,7 +14,6 @@ sudo pacman -S --needed --noconfirm hyprpicker
 sudo pacman -S --needed --noconfirm swww
 sudo pacman -S --needed --noconfirm otf-codenewroman-nerd
 sudo pacman -S --needed --noconfirm nwg-displays
-sudo pacman -S --needed --noconfirm blueman  
 sudo pacman -S --needed --noconfirm pavucontrol
 sudo pacman -S --needed --noconfirm brightnessctl
 sudo pacman -S --needed --noconfirm networkmanager
@@ -23,9 +22,16 @@ sudo pacman -S --needed --noconfirm nm-connection-editor
 sudo pacman -S --needed --noconfirm dunst
 sudo pacman -S --needed --noconfirm waybar
 sudo pacman -S --needed --noconfirm nautilus
-yay -S --noconfirm hellwal 
-yay -S --noconfirm waypaper
-yay -S --noconfirm python-pywalfox
+sudo pacman -S --needed --noconfirm zsh
+sudo pacman -S --needed --noconfirm hyprshot
+sudo pacman -S --needed --noconfirm zoxide
+sudo pacman -S --needed --noconfirm wl-clipboard
+yay -S --noconfirm --needed blueman-git  
+yay -S --noconfirm --needed hellwal 
+yay -S --noconfirm --needed waypaper
+yay -S --noconfirm --needed python-pywalfox
+yay -S --noconfirm --needed pokemon-colorscripts-git
+yay -S --noconfirm --needed clipse
 
 #               Configuraciónes 
 #Hyprland
@@ -33,6 +39,10 @@ echo "Aplicando configuraciones de Hyprland..."
 rm -rf "$HOME/.config/hypr"
 ln -srv "$DOTFILES_DIR/configs/hypr" "$HOME/.config/hypr"
 echo "Listo"
+
+#Bluetooth
+sudo systemctl start bluetooth
+sudo systemctl enable bluetooth
 
 #Iconos
 echo "Aplicando iconos..."
@@ -89,6 +99,22 @@ echo "Aplicando configuraciones de Kitty..."
 rm -rf "$HOME/.config/kitty"
 ln -srv "$DOTFILES_DIR/configs/kitty" "$HOME/.config/kitty"
 echo "Listo"
+
+
+# OH MY ZSH 
+set +e
+export RUNZSH=no CHSH=no ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
+rm -rf "$HOME/.oh-my-zsh"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+set -e
+
+# plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions.git "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
+
+rm -f "$HOME/.zshrc"
+ln -sv "$DOTFILES_DIR/configs/.zshrc" "$HOME/.zshrc"
+
 
 #Fuentes
 echo "Aplicando configuraciones de las Fuentes..."

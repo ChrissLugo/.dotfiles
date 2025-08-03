@@ -15,8 +15,6 @@
         "cpu",
         "memory",
         "custom/separator1",
-        "bluetooth",
-        "custom/separator1",
         "pulseaudio",
         "custom/separator1",
         "battery"
@@ -142,11 +140,11 @@
         "signal": 1
     },
     "cpu": {
-        "format": "󰻠 {usage}%",
+        "format": " {usage}%",
         "tooltip": true
     },
     "memory": {
-        "format": " {percentage}%"
+        "format": "  {percentage}%"
     },
     "temperature": {
         "critical-threshold": 80,
@@ -166,12 +164,10 @@
         "tooltip": false
     },
     "pulseaudio": {
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
+        "format": "{volume}% {icon} ",
+        "format-bluetooth": "{volume}% {icon} ",
         "format-muted": "",
         "format-icons": {
-            "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
-            "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
             "headphones": "",
             "handsfree": "",
             "headset": "",
