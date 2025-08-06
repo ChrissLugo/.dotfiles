@@ -27,6 +27,8 @@ sudo pacman -S --needed --noconfirm hyprshot
 sudo pacman -S --needed --noconfirm zoxide
 sudo pacman -S --needed --noconfirm wl-clipboard
 sudo pacman -S --needed --noconfirm noto-fonts-emoji
+sudo pacman -S --needed --noconfirm xdg-desktop-portal-hyprland
+sudo pacman -S --needed --noconfirm hyprpolkitagent
 yay -S --noconfirm --needed blueman-git  
 yay -S --noconfirm --needed hellwal 
 yay -S --noconfirm --needed waypaper
