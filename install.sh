@@ -26,6 +26,7 @@ sudo pacman -S --needed --noconfirm zsh
 sudo pacman -S --needed --noconfirm hyprshot
 sudo pacman -S --needed --noconfirm zoxide
 sudo pacman -S --needed --noconfirm wl-clipboard
+sudo pacman -S --needed --noconfirm noto-fonts-emoji
 yay -S --noconfirm --needed blueman-git  
 yay -S --noconfirm --needed hellwal 
 yay -S --noconfirm --needed waypaper
@@ -104,6 +105,7 @@ echo "Listo"
 echo "Aplicando configuraciones de Dunst..."
 rm -rf "$HOME/.config/dunst"
 ln -srv "$DOTFILES_DIR/configs/dunst" "$HOME/.config/dunst"
+killall dunst
 echo "Listo"
 
 # OH MY ZSH 
