@@ -100,6 +100,11 @@ rm -rf "$HOME/.config/kitty"
 ln -srv "$DOTFILES_DIR/configs/kitty" "$HOME/.config/kitty"
 echo "Listo"
 
+#Dunst
+echo "Aplicando configuraciones de Dunst..."
+rm -rf "$HOME/.config/dunst"
+ln -srv "$DOTFILES_DIR/configs/dunst" "$HOME/.config/dunst"
+echo "Listo"
 
 # OH MY ZSH 
 set +e

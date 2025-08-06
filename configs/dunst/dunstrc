@@ -1,0 +1,88 @@
+############################################
+# Sección GLOBAL
+############################################
+
+[global]
+    ## Monitor y posición ##
+    monitor = 0
+    follow = mouse                  
+    origin = right          
+    offset = (10, 50)                
+
+    ## Tamaño y forma ##
+    #width = 300                     
+    height = (0, 300)               
+    corner_radius = 12              
+    corners = all                  
+    frame_width = 1                
+    frame_color = "#44475a88"       
+
+    ## Espaciado y separación ##
+    padding = 12                     
+    horizontal_padding = 12
+    text_icon_padding = 8            
+    gap_size = 8                     
+
+    ## Transparencia y estilo ##
+    transparency = 10               
+    shake_threshold = 10            
+    sort = urgency_descending       
+
+    ## Fuentes y texto ##
+    font = "Roboto Mono 10"         
+    line_height = 1                 
+    alignment = left              
+    vertical_alignment = center     
+    markup = full                   
+
+    ## Iconos ##
+    enable_recursive_icon_lookup = true
+    icon_theme = "Papirus"          
+    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    min_icon_size = 32             
+    max_icon_size = 64              
+
+    ## Historial y persistencia 
+    sticky_history = yes            
+    history_length = 10           
+
+############################################
+# Sección URGENCY: BAJA (Low)
+############################################
+
+[urgency_low]
+    background       = "#000000cc"   #
+    foreground       = "#f8f8f2ff"   
+    frame_color      = "#44475a88"   
+    frame_width      = 1             
+    timeout          = 2
+    override_pause_level = 30
+    default_icon     = dialog-information
+
+############################################
+# Sección URGENCY: NORMAL (Normal)
+############################################
+
+[urgency_normal]
+    background       = "#000000ed"   
+    foreground       = "#f8f8f2ff"
+    frame_color      = "#6272a488"   
+    frame_width      = 1
+    timeout          = 2
+    override_pause_level = 45
+    default_icon     = dialog-information    
+  
+
+############################################
+# Sección URGENCY: CRITICAL (Crítica)
+############################################
+
+[urgency_critical]
+    background       = "#ff5555ee"  
+    foreground       = "#000000ff" 
+    frame_color      = "#ffb86cee"  
+    frame_width      = 2
+    timeout          = 15       
+    override_pause_level = 60
+    default_icon     = dialog-warning 
+
