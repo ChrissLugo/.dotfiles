@@ -29,6 +29,7 @@ sudo pacman -S --needed --noconfirm wl-clipboard
 sudo pacman -S --needed --noconfirm noto-fonts-emoji
 sudo pacman -S --needed --noconfirm xdg-desktop-portal-hyprland
 sudo pacman -S --needed --noconfirm hyprpolkitagent
+sudo pacman -S --needed --noconfirm nwg-look
 yay -S --noconfirm --needed blueman-git  
 yay -S --noconfirm --needed hellwal 
 yay -S --noconfirm --needed waypaper
@@ -54,6 +55,15 @@ ln -srv "$DOTFILES_DIR/configs/icons" "$HOME/.local/share"
 
 gsettings set org.gnome.desktop.interface icon-theme "kora"
 
+echo "Listo"
+
+#Themes
+echo "Aplicando temas..."
+rm -rf "$HOME/.local/share/themes"
+ln -srv "$DOTFILES_DIR/configs/themes" "$HOME/.local/share"
+
+gsettings set org.gnome.desktop.interface gtk-theme Kripton
+gsettings set org.gnome.desktop.wm.preferences theme Kripton
 echo "Listo"
 
 #Cursor
