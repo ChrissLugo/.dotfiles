@@ -36,6 +36,8 @@ yay -S --noconfirm --needed waypaper
 yay -S --noconfirm --needed python-pywalfox
 yay -S --noconfirm --needed pokemon-colorscripts-git
 yay -S --noconfirm --needed clipse
+yay -S --noconfirm --needed nmgui-bin
+yay -S --noconfirm --needed sddm-silent-theme
 
 #               Configuraciónes 
 #Hyprland
@@ -99,6 +101,12 @@ echo "Listo"
 echo "Aplicando configuraciones de Waybar..."
 rm -rf "$HOME/.config/waybar"
 ln -srv "$DOTFILES_DIR/configs/waybar" "$HOME/.config/waybar"
+echo "Listo"
+
+#sddm
+echo "Aplicando configuraciones de SDDM..."
+rm -f "/etc/sddm.conf"
+sudo ln -srv "$DOTFILES_DIR/configs/sddm.conf" "/etc/sddm.conf"
 echo "Listo"
 
 #Rofi
