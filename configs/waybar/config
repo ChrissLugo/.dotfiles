@@ -19,9 +19,9 @@
         "custom/separator1",
         "pulseaudio",
         "custom/separator1",
-        "battery",
+        "hyprland/language",
         "custom/separator1",
-        "hyprland/language"
+        "battery"
     ],
     "hyprland/workspaces": {
         "format": "{icon}",
