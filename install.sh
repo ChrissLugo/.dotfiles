@@ -3,10 +3,6 @@ set -euo pipefail
 #Variables
 DOTFILES_DIR=$(pwd)
 
-#Instalar YAY
-sudo pacman -S --needed --noconfirm base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
-cd ..
-
 #Instalar programas necesarios
 sudo pacman -S --needed --noconfirm cava
 sudo pacman -S --needed --noconfirm rofi-wayland
@@ -19,7 +15,7 @@ sudo pacman -S --needed --noconfirm brightnessctl
 sudo pacman -S --needed --noconfirm networkmanager
 sudo pacman -S --needed --noconfirm network-manager-applet
 sudo pacman -S --needed --noconfirm nm-connection-editor
-sudo pacman -S --needed --noconfirm dunst
+sudo pacman -S --needed --noconfirm dunstwa
 sudo pacman -S --needed --noconfirm waybar
 sudo pacman -S --needed --noconfirm nautilus
 sudo pacman -S --needed --noconfirm zsh
@@ -38,6 +34,7 @@ yay -S --noconfirm --needed pokemon-colorscripts-git
 yay -S --noconfirm --needed clipse
 yay -S --noconfirm --needed nmgui-bin
 yay -S --noconfirm --needed sddm-silent-theme
+yay -S --noconfirm --needed bongocat
 
 #               Configuraciónes 
 #Hyprland

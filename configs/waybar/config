@@ -3,22 +3,23 @@
     "position": "top",
     "reload_style_on_change": true,
     "modules-left": [
-        "hyprland/language",
+        "hyprland/workspaces",
         "custom/separator1",
         "clock",
+        "custom/separator1",
         "network",
         "tray"
     ],
-    "modules-center": [
-        "hyprland/workspaces"
-    ],
+    "modules-center": [],
     "modules-right": [
         "cpu",
         "memory",
         "custom/separator1",
         "pulseaudio",
         "custom/separator1",
-        "battery"
+        "battery",
+        "custom/separator1",
+        "hyprland/language"
     ],
     "hyprland/workspaces": {
         "format": "{icon}",
