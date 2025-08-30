@@ -3,14 +3,16 @@
     "position": "top",
     "reload_style_on_change": true,
     "modules-left": [
-        "hyprland/workspaces",
+        "custom/cava",
         "custom/separator1",
         "clock",
         "custom/separator1",
         "network",
         "tray"
     ],
-    "modules-center": [],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
     "modules-right": [
         "cpu",
         "memory",
@@ -195,5 +197,9 @@
             "󰤨"
         ],
         "on-click": "nmgui"
+    },
+    "custom/cava": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/cava.sh"
     }
 }
