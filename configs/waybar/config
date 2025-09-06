@@ -3,7 +3,8 @@
     "position": "top",
     "reload_style_on_change": true,
     "modules-left": [
-        "custom/cava",
+        // "custom/cava",
+        "hyprland/language",
         "custom/separator1",
         "clock",
         "custom/separator1",
@@ -18,8 +19,6 @@
         "memory",
         "custom/separator1",
         "pulseaudio",
-        "custom/separator1",
-        "hyprland/language",
         "custom/separator1",
         "battery"
     ],

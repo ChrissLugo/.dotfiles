@@ -52,7 +52,7 @@
 
 window {
     width:          380;
-    border-radius:  0px;
+    border-radius:  10;
     background-color:   @bg0;
     separator: false;
 }
