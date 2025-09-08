@@ -1,8 +1,7 @@
 {
     "layer": "top",
-    "position": "left",
+    "position": "top",
     "reload_style_on_change": true,
-    "margin": "6 0 6 0",
     "modules-left": [
         // "custom/cava",
         "hyprland/language",
@@ -10,7 +9,6 @@
         "clock",
         "custom/separator1",
         "network",
-        "custom/separator1",
         "tray"
     ],
     "modules-center": [
@@ -18,7 +16,6 @@
     ],
     "modules-right": [
         "cpu",
-        "custom/separator1",
         "memory",
         "custom/separator1",
         "pulseaudio",
@@ -30,7 +27,7 @@
         "format-icons": {
             "active": "",
             "default": "",
-            "empty": ""
+            "empty": ""
         },
         "persistent-workspaces": {
             "*": [
@@ -49,10 +46,8 @@
         "escape": true
     },
     "clock": {
-        "format": "{:%I\n%M\n%p}",
+        "format": "{:%I:%M:%S %p} ",
         "interval": 1,
-        "justify": "center",
-        "align": 0.5,
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
             "format": {
@@ -78,23 +73,24 @@
         "on-click": "blueman-manager"
     },
     "battery": {
-        "interval": 1,
+        "interval": 30,
         "states": {
             "good": 95,
             "warning": 30,
             "critical": 20
         },
-        "format": "{capacity}%\n<span font='Symbols Nerd Font 14'>{icon}</span>",
-        "format-charging": "{capacity}%\n<span font='Symbols Nerd Font 14'></span>",
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󰂄",
         "format-plugged": "{capacity}% 󰂄 ",
+        "format-alt": "{time} {icon}",
         "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
-        "justify": "center"
+            "󰁻",
+            "󰁼",
+            "󰁾",
+            "󰂀",
+            "󰂂",
+            "󰁹"
+        ]
     },
     "custom/pacman": {
         "format": "󰅢 {}",
@@ -138,22 +134,17 @@
         "signal": 1
     },
     "cpu": {
-        "justify": "center",
-        "format": "{usage}%\n<span font='Symbols Nerd Font 14'></span>",
-        "tooltip": true,
-        "interval": 1
+        "format": " {usage}%",
+        "tooltip": true
     },
     "memory": {
-        "justify": "center",
-        "format": "{percentage}%\n<span font='Symbols Nerd Font 14'></span>",
-        "interval": 1
+        "format": "  {percentage}%"
     },
     "temperature": {
         "critical-threshold": 80,
         "format": ""
     },
     "tray": {
-        "justify": "center",
         "icon-size": 14,
         "spacing": 10
     },
@@ -163,12 +154,11 @@
         "format-en": "US"
     },
     "custom/separator1": {
-        "format": "-",
+        "format": "|",
         "tooltip": false
     },
     "pulseaudio": {
-        "format": "{volume}%\n<span font='Symbols Nerd Font 14'>{icon}</span>",
-        "justify": "center",
+        "format": "{volume}% {icon} ",
         "format-bluetooth": "{volume}% {icon} ",
         "format-muted": "",
         "format-icons": {
@@ -205,8 +195,7 @@
             "󰤥",
             "󰤨"
         ],
-        "on-click": "nmgui",
-        "justify": "center"
+        "on-click": "nmgui"
     },
     "custom/cava": {
         "format": "{}",
