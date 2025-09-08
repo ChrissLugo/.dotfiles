@@ -24,7 +24,7 @@ PACMAN_PACKAGES=(
 
 AUR_PACKAGES=(
     blueman-git hellwal waypaper python-pywalfox pokemon-colorscripts-git 
-    clipse nmgui-bin bongocat
+    clipse nmgui-bin bongocat ttf-nerd-fonts-symbols
 )
 
 install_pacman_packages() {
