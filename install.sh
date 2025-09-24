@@ -19,7 +19,7 @@ PACMAN_PACKAGES=(
     pavucontrol brightnessctl network-manager-applet nm-connection-editor
     dunst waybar nautilus zsh hyprshot zoxide wl-clipboard noto-fonts-emoji
     xdg-desktop-portal-hyprland hyprpolkitagent nwg-look qt5-quickcontrols2
-    layer-shell-qt5 layer-shell-qt
+    layer-shell-qt5 layer-shell-qt qt5ct qt6ct qt5-wayland qt6-wayland kvantum
 )
 
 AUR_PACKAGES=(
@@ -116,6 +116,13 @@ configs(){
     git clone https://github.com/Davi-S/sddm-theme-minesddm.git ~/sddm-theme-minesddm > /dev/null 2>&1
     sudo cp -r ~/sddm-theme-minesddm/minesddm /usr/share/sddm/themes/
     sudo rm -rf ~/sddm-theme-minesddm
+    ok "Listo"
+
+    #kvantum themes
+    git clone https://github.com/GabePoel/KvLibadwaita.git
+    cd KvLibadwaita
+    sudo ./install.sh
+    sudo rm -rf ~/KvLibadwaita
     ok "Listo"
 
     #Rofi
