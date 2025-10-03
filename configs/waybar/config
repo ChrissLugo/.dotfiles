@@ -173,12 +173,8 @@
         "format-muted": "",
         "format-icons": {
             "headphones": "",
-            "handsfree": "",
-            "headset": "",
-            "phone": "",
-            "phone-muted": "",
-            "portable": "",
-            "car": "",
+            "handsfree": "",
+            "headset": "",
             "default": [
                 "",
                 ""
@@ -209,6 +205,7 @@
         "justify": "center"
     },
     "custom/cava": {
+        "rotate": 270,
         "format": "{}",
         "exec": "~/.config/waybar/scripts/cava.sh"
     }
