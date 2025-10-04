@@ -1,0 +1,43 @@
+/* Variables de color */
+@import url("file:///home/lugo/.cache/hellwal/waybar-colors.css");
+
+@define-color principal @color3;
+
+window#osd {
+    border-radius: 100px;
+    border: none;
+    background: alpha(@background, 0.4);
+
+    #container {
+        margin: 16px;
+    }
+
+    image,
+    label {
+        color: alpha(@background, 0.4);
+    }
+
+    progressbar:disabled,
+    image:disabled {
+        opacity: 0.5;
+    }
+
+    progressbar {
+        min-height: 6px;
+        border-radius: 999px;
+        background: alpha(@background, 0.4);
+        border: none;
+    }
+    trough {
+        min-height: inherit;
+        border-radius: inherit;
+        border: none;
+        background: alpha(@background, 0.4);
+    }
+    progress {
+        min-height: inherit;
+        border-radius: inherit;
+        border: none;
+        background: alpha(@background, 0.4);
+    }
+}
