@@ -19,13 +19,13 @@ PACMAN_PACKAGES=(
     pavucontrol brightnessctl network-manager-applet nm-connection-editor
     dunst waybar nautilus zsh hyprshot zoxide wl-clipboard noto-fonts-emoji
     xdg-desktop-portal-hyprland hyprpolkitagent nwg-look qt5-quickcontrols2
-    layer-shell-qt5 layer-shell-qt qt5ct qt6ct qt5-wayland qt6-wayland kvantum
-    ntfs-3g exfat-utils dosfstools hfsprogs syncthing
+    layer-shell-qt qt5ct qt6ct qt5-wayland qt6-wayland kvantum
+    ntfs-3g exfat-utils dosfstools syncthing grim imagemagick
 )
 
 AUR_PACKAGES=(
     blueman-git hellwal waypaper python-pywalfox pokemon-colorscripts-git 
-    clipse nmgui-bin bongocat ttf-nerd-fonts-symbols swww-git swayosd-git
+    clipse nmgui-bin bongocat ttf-nerd-fonts-symbols swww-git swayosd-git quickshell
 )
 
 install_pacman_packages() {
@@ -120,10 +120,22 @@ configs(){
     ok "Listo"
 
     #kvantum themes
-    git clone https://github.com/GabePoel/KvLibadwaita.git
+    sudo rm -rf ./KvLibadwaita
+    git clone https://github.com/GabePoel/KvLibadwaita.git > /dev/null 2>&1
     cd KvLibadwaita
-    sudo ./install.sh
+    ./install.sh
     sudo rm -rf ~/KvLibadwaita
+    sudo rm -rf ./KvLibadwaita
+    ok "Listo"
+
+    #Overview
+    sudo rm -rf ~/.config/quickshell/overview/
+    git clone https://github.com/Shanu-Kumawat/quickshell-overview ~/.config/quickshell/overview  > /dev/null 2>&1
+    ok "Listo"
+
+    #Hyprquickshot
+    sudo rm -rf ~/.config/quickshell/hyprquickshot
+    git clone https://github.com/jamdon2/hyprquickshot ~/.config/quickshell/hyprquickshot > /dev/null 2>&1
     ok "Listo"
 
     #Rofi
@@ -215,7 +227,13 @@ printTitle(){
 }
 
 main() {
+    
     printTitle
+    log "Actualizando sistema antes de comenzar"
+    sudo pacman -Syy > /dev/null 2>&1
+    sudo pacman -Syu > /dev/null 2>&1
+    ok "Listo"
+    
     install_pacman_packages
     install_aur_packages
     configs
