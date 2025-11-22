@@ -3,6 +3,7 @@
     "position": "left",
     "reload_style_on_change": true,
     "margin": "6 0 6 0",
+    "exclusive": false,
     "modules-left": [
         // "custom/cava",
         "hyprland/language",

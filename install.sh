@@ -20,12 +20,12 @@ PACMAN_PACKAGES=(
     dunst waybar nautilus zsh hyprshot zoxide wl-clipboard noto-fonts-emoji
     xdg-desktop-portal-hyprland hyprpolkitagent nwg-look qt5-quickcontrols2
     layer-shell-qt qt5ct qt6ct qt5-wayland qt6-wayland kvantum
-    ntfs-3g exfat-utils dosfstools syncthing grim imagemagick
+    ntfs-3g exfat-utils dosfstools syncthing grim imagemagick hyprlock
 )
 
 AUR_PACKAGES=(
     blueman-git hellwal waypaper python-pywalfox pokemon-colorscripts-git 
-    clipse nmgui-bin bongocat ttf-nerd-fonts-symbols swww-git swayosd-git quickshell
+    clipse nmgui-bin bongocat ttf-nerd-fonts-symbols swww-git swayosd-git quickshell sherlock-launcher-git
 )
 
 install_pacman_packages() {
@@ -142,6 +142,11 @@ configs(){
     log "Aplicando configuraciones de Rofi..."
     rm -rf "$HOME/.config/rofi"
     ln -srv "$DOTFILES_DIR/configs/rofi" "$HOME/.config/rofi" > /dev/null 2>&1
+    ok "Listo"
+
+    log "Aplicando configuraciones de Sherlock..."
+    rm -rf "$HOME/.config/sherlock"
+    ln -srv "$DOTFILES_DIR/configs/sherlock" "$HOME/.config/sherlock" > /dev/null 2>&1
     ok "Listo"
 
     #Kitty

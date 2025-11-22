@@ -1,7 +1,7 @@
 /* Variables de color */
 @import url("file:///home/lugo/.cache/hellwal/waybar-colors.css");
 
-@define-color principal @color3;
+@define-color principal @foreground;
 @define-color hover @cursor;
 
 * {
