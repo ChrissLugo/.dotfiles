@@ -30,8 +30,8 @@ AUR_PACKAGES=(
 
 install_pacman_packages() {
     log "Sincronizando bases e instalando paquetes de pacman..."
-    sudo pacman -Sy --noconfirm > /dev/null 2>&1
-    sudo pacman -S --needed --noconfirm "${PACMAN_PACKAGES[@]}" > /dev/null 2>&1
+    sudo pacman -Sy --noconfirm #> /dev/null 2>&1
+    sudo pacman -S --needed --noconfirm "${PACMAN_PACKAGES[@]}" #> /dev/null 2>&1
     ok "Paquetes Pacman instalados exitosamente"
 }
 
@@ -41,7 +41,7 @@ install_aur_packages() {
     return
     fi
         log "Instalando paquetes AUR con yay..."
-        yay -S --noconfirm --needed "${AUR_PACKAGES[@]}" > /dev/null 2>&1
+        yay -S --noconfirm --needed "${AUR_PACKAGES[@]}" #> /dev/null 2>&1
         ok "Paquetes AUR instalados exitosamente"
 
 }
@@ -50,7 +50,7 @@ configs(){
     #Hyprland
     log "Aplicando configuraciones de Hyprland..."
     rm -rf "$HOME/.config/hypr"
-    ln -srv "$DOTFILES_DIR/configs/hypr" "$HOME/.config/hypr" > /dev/null 2>&1
+    ln -srv "$DOTFILES_DIR/configs/hypr" "$HOME/.config/hypr" #> /dev/null 2>&1
     ok "Listo"
 
     #Bluetooth
@@ -60,7 +60,7 @@ configs(){
     #Iconos
     log "Aplicando iconos..."
     rm -rf "$HOME/.local/share/icons"
-    ln -srv "$DOTFILES_DIR/configs/icons" "$HOME/.local/share" > /dev/null 2>&1
+    ln -srv "$DOTFILES_DIR/configs/icons" "$HOME/.local/share" #> /dev/null 2>&1
 
     gsettings set org.gnome.desktop.interface icon-theme "kora"
 
@@ -69,15 +69,15 @@ configs(){
     #Themes
     log "Aplicando temas..."
     rm -rf "$HOME/.local/share/themes"
-    ln -srv "$DOTFILES_DIR/configs/themes" "$HOME/.local/share" > /dev/null 2>&1
+    ln -srv "$DOTFILES_DIR/configs/themes" "$HOME/.local/share" #> /dev/null 2>&1
 
     gsettings set org.gnome.desktop.interface gtk-theme Kripton
     gsettings set org.gnome.desktop.wm.preferences theme Kripton
     ok "Listo"
 
     #Cursor
-    hyprctl setcursor macOS 25 > /dev/null 2>&1
-    hyprctl reload > /dev/null 2>&1
+    hyprctl setcursor macOS 25 #> /dev/null 2>&1
+    hyprctl reload #> /dev/null 2>&1
 
     #Red
     sudo systemctl enable --now NetworkManager
@@ -85,43 +85,43 @@ configs(){
     #Waypaper
     log "Aplicando configuraciones de Waypaper..."
     rm -rf "$HOME/.config/waypaper"
-    ln -srv "$DOTFILES_DIR/configs/waypaper" "$HOME/.config/waypaper" > /dev/null 2>&1
+    ln -srv "$DOTFILES_DIR/configs/waypaper" "$HOME/.config/waypaper" #> /dev/null 2>&1
     ok "Listo"
 
     #Hellwal
     log "Aplicando configuraciones de Hellwal..."
     rm -rf "$HOME/.config/hellwal"
-    ln -srv "$DOTFILES_DIR/configs/hellwal" "$HOME/.config/hellwal" > /dev/null 2>&1
+    ln -srv "$DOTFILES_DIR/configs/hellwal" "$HOME/.config/hellwal" #> /dev/null 2>&1
 
     mkdir -p ~/.cache/hellwal
     mkdir -p ~/.cache/wal
 
-    ln -sf ~/.cache/hellwal/colors ~/.cache/wal/colors > /dev/null 2>&1
-    ln -sf ~/.cache/hellwal/colors.json ~/.cache/wal/colors.json > /dev/null 2>&1
+    ln -sf ~/.cache/hellwal/colors ~/.cache/wal/colors #> /dev/null 2>&1
+    ln -sf ~/.cache/hellwal/colors.json ~/.cache/wal/colors.json #> /dev/null 2>&1
 
     ok "Listo"
 
     #Waybar
     log "Aplicando configuraciones de Waybar..."
     rm -rf "$HOME/.config/waybar"
-    ln -srv "$DOTFILES_DIR/configs/waybar" "$HOME/.config/waybar" > /dev/null 2>&1
+    ln -srv "$DOTFILES_DIR/configs/waybar" "$HOME/.config/waybar" #> /dev/null 2>&1
     ok "Listo"
 
     #sddm
     log "Aplicando configuraciones de SDDM..."
     sudo rm -f "/etc/sddm.conf"
-    sudo ln -srv "$DOTFILES_DIR/configs/sddm.conf" "/etc/sddm.conf" > /dev/null 2>&1
+    sudo ln -srv "$DOTFILES_DIR/configs/sddm.conf" "/etc/sddm.conf" #> /dev/null 2>&1
     
     #sddm minecraft theme
     sudo rm -rf ~/sddm-theme-minesddm
-    git clone https://github.com/Davi-S/sddm-theme-minesddm.git ~/sddm-theme-minesddm > /dev/null 2>&1
+    git clone https://github.com/Davi-S/sddm-theme-minesddm.git ~/sddm-theme-minesddm #> /dev/null 2>&1
     sudo cp -r ~/sddm-theme-minesddm/minesddm /usr/share/sddm/themes/
     sudo rm -rf ~/sddm-theme-minesddm
     ok "Listo"
 
     #kvantum themes
     sudo rm -rf ./KvLibadwaita
-    git clone https://github.com/GabePoel/KvLibadwaita.git > /dev/null 2>&1
+    git clone https://github.com/GabePoel/KvLibadwaita.git #> /dev/null 2>&1
     cd KvLibadwaita
     ./install.sh
     sudo rm -rf ~/KvLibadwaita
@@ -130,35 +130,35 @@ configs(){
 
     #Overview
     sudo rm -rf ~/.config/quickshell/overview/
-    git clone https://github.com/Shanu-Kumawat/quickshell-overview ~/.config/quickshell/overview  > /dev/null 2>&1
+    git clone https://github.com/Shanu-Kumawat/quickshell-overview ~/.config/quickshell/overview  #> /dev/null 2>&1
     ok "Listo"
 
     #Hyprquickshot
     sudo rm -rf ~/.config/quickshell/hyprquickshot
-    git clone https://github.com/jamdon2/hyprquickshot ~/.config/quickshell/hyprquickshot > /dev/null 2>&1
+    git clone https://github.com/jamdon2/hyprquickshot ~/.config/quickshell/hyprquickshot #> /dev/null 2>&1
     ok "Listo"
 
     #Rofi
     log "Aplicando configuraciones de Rofi..."
     rm -rf "$HOME/.config/rofi"
-    ln -srv "$DOTFILES_DIR/configs/rofi" "$HOME/.config/rofi" > /dev/null 2>&1
+    ln -srv "$DOTFILES_DIR/configs/rofi" "$HOME/.config/rofi" #> /dev/null 2>&1
     ok "Listo"
 
     log "Aplicando configuraciones de Sherlock..."
     rm -rf "$HOME/.config/sherlock"
-    ln -srv "$DOTFILES_DIR/configs/sherlock" "$HOME/.config/sherlock" > /dev/null 2>&1
+    ln -srv "$DOTFILES_DIR/configs/sherlock" "$HOME/.config/sherlock" #> /dev/null 2>&1
     ok "Listo"
 
     #Kitty
     log "Aplicando configuraciones de Kitty..."
     rm -rf "$HOME/.config/kitty"
-    ln -srv "$DOTFILES_DIR/configs/kitty" "$HOME/.config/kitty" > /dev/null 2>&1
+    ln -srv "$DOTFILES_DIR/configs/kitty" "$HOME/.config/kitty" #> /dev/null 2>&1
     ok "Listo"
 
     #Dunst
     log "Aplicando configuraciones de Dunst..."
     rm -rf "$HOME/.config/dunst"
-    ln -srv "$DOTFILES_DIR/configs/dunst" "$HOME/.config/dunst" > /dev/null 2>&1
+    ln -srv "$DOTFILES_DIR/configs/dunst" "$HOME/.config/dunst" #> /dev/null 2>&1
     ok "Listo"
 
     # OH MY ZSH 
@@ -166,17 +166,17 @@ configs(){
     export RUNZSH=no CHSH=no ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
     export RUNZSH=no CHSH=no ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
     rm -rf "$HOME/.oh-my-zsh"
-    git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git "$HOME/.oh-my-zsh" > /dev/null 2>&1
+    git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git "$HOME/.oh-my-zsh" #> /dev/null 2>&1
     ok "Listo"
 
     # plugins
     log "instalando plugins de OMZSH"
-    git clone https://github.com/zsh-users/zsh-autosuggestions.git "$ZSH_CUSTOM/plugins/zsh-autosuggestions" > /dev/null 2>&1
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" > /dev/null 2>&1
+    git clone https://github.com/zsh-users/zsh-autosuggestions.git "$ZSH_CUSTOM/plugins/zsh-autosuggestions" #> /dev/null 2>&1
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" #> /dev/null 2>&1
     ok "Listo"
 
     rm -f "$HOME/.zshrc"
-    ln -sv "$DOTFILES_DIR/configs/.zshrc" "$HOME/.zshrc" > /dev/null 2>&1
+    ln -sv "$DOTFILES_DIR/configs/.zshrc" "$HOME/.zshrc" #> /dev/null 2>&1
 
     #Bongocat
     sudo usermod -a -G input $USER
@@ -184,7 +184,7 @@ configs(){
     #Fuentes
     log "Aplicando configuraciones de las Fuentes..."
     rm -rf "$HOME/.local/share/fonts"
-    ln -srv "$DOTFILES_DIR/configs/fonts" "$HOME/.local/share/fonts"> /dev/null 2>&1
+    ln -srv "$DOTFILES_DIR/configs/fonts" "$HOME/.local/share/fonts"#> /dev/null 2>&1
     ok "Listo"
 
     log "Configurando aplicaciones..."
@@ -198,18 +198,18 @@ configs(){
 fi
 
     # Aplica wallpaper
-    swww img "$DOTFILES_DIR/configs/wallpaper.jpg" > /dev/null 2>&1
+    swww img "$DOTFILES_DIR/configs/wallpaper.jpg" #> /dev/null 2>&1
 
     # Hellwal
-    hellwal -i "$DOTFILES_DIR/configs/wallpaper.jpg" --neon-mode --bright-offset 1  > /dev/null 2>&1
+    hellwal -i "$DOTFILES_DIR/configs/wallpaper.jpg" --neon-mode --bright-offset 1  #> /dev/null 2>&1
 
-    pkill -USR2 waybar > /dev/null 2>&1
+    pkill -USR2 waybar #> /dev/null 2>&1
 
     # Actualiza pywalfox
-    pywalfox update & > /dev/null 2>&1
+    pywalfox update & #> /dev/null 2>&1
 
     # Bongocat
-    bongocat -t -c "$DOTFILES_DIR/configs/bongocat/bongocat.conf" > /dev/null 2>&1 &
+    bongocat -t -c "$DOTFILES_DIR/configs/bongocat/bongocat.conf" #> /dev/null 2>&1 &
 
     ok "Listo"
 }
@@ -235,8 +235,8 @@ main() {
     
     printTitle
     log "Actualizando sistema antes de comenzar"
-    sudo pacman -Syy > /dev/null 2>&1
-    sudo pacman -Syu > /dev/null 2>&1
+    sudo pacman -Syy #> /dev/null 2>&1
+    sudo pacman -Syu #> /dev/null 2>&1
     ok "Listo"
     
     install_pacman_packages
