@@ -20,12 +20,13 @@ PACMAN_PACKAGES=(
     dunst waybar nautilus zsh hyprshot zoxide wl-clipboard noto-fonts-emoji
     xdg-desktop-portal-hyprland hyprpolkitagent nwg-look qt5-quickcontrols2
     layer-shell-qt qt5ct qt6ct qt5-wayland qt6-wayland kvantum
-    ntfs-3g exfat-utils dosfstools syncthing grim imagemagick hyprlock
+    ntfs-3g exfat-utils dosfstools syncthing grim imagemagick hyprlock lsd
 )
 
 AUR_PACKAGES=(
     blueman-git hellwal waypaper python-pywalfox pokemon-colorscripts-git 
     clipse nmgui-bin bongocat ttf-nerd-fonts-symbols swww-git swayosd-git quickshell sherlock-launcher-git
+    ttf-meslo-nerd
 )
 
 install_pacman_packages() {
