@@ -29,6 +29,8 @@ alias ls='lsd'
 alias ll='lsd -lh'
 alias la='lsd -a'
 
+alias code='codium'
+
 #hacer ls al cambiar de directorio
 function chpwd() {
     ls

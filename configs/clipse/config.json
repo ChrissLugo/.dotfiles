@@ -1,0 +1,55 @@
+{
+    "allowDuplicates": false,
+    "historyFile": "clipboard_history.json",
+    "maxHistory": 100,
+    "deleteAfter": 0,
+    "logFile": "clipse.log",
+    "pollInterval": 50,
+    "maxEntryLength": 65,
+    "themeFile": "/home/lugo/.cache/hellwal/clipse.json",
+    "tempDir": "tmp_files",
+    "keyBindings": {
+        "choose": "enter",
+        "clearSelected": "S",
+        "down": "down",
+        "end": "end",
+        "filter": "/",
+        "forceQuit": "Q",
+        "home": "home",
+        "more": "?",
+        "nextPage": "right",
+        "prevPage": "left",
+        "preview": " ",
+        "quit": "esc",
+        "remove": "backspace",
+        "selectDown": "shift+down",
+        "selectSingle": "s",
+        "selectUp": "shift+up",
+        "togglePin": "p",
+        "togglePinned": "tab",
+        "up": "up",
+        "yankFilter": "ctrl+s"
+    },
+    "imageDisplay": {
+        "type": "kitty",
+        "scaleX": 25,
+        "scaleY": 25,
+        "heightCut": 2
+    },
+    "excludedApps": [
+        "1Password",
+        "Bitwarden",
+        "KeePassXC",
+        "LastPass",
+        "Dashlane",
+        "Password Safe",
+        "Keychain Access"
+    ],
+    "autoPaste": {
+        "enabled": true,
+        "keybind": "ctrl+v",
+        "buffer": 10
+    },
+    "enableMouse": false,
+    "enableDescription": true
+}

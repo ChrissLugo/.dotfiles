@@ -54,6 +54,12 @@ configs(){
     ln -srv "$DOTFILES_DIR/configs/hypr" "$HOME/.config/hypr" #> /dev/null 2>&1
     ok "Listo"
 
+    #Clipse
+    log "Aplicando configuraciones de Clipse..."
+    rm -rf "$HOME/.config/clipse"
+    ln -srv "$DOTFILES_DIR/configs/clipse" "$HOME/.config/clipse" #> /dev/null 2>&1
+    ok "Listo"
+
     #Bluetooth
     sudo systemctl start bluetooth
     sudo systemctl enable bluetooth
@@ -182,10 +188,12 @@ configs(){
     #Bongocat
     sudo usermod -a -G input $USER
 
-    #Fuentes
+    # Fuentes
     log "Aplicando configuraciones de las Fuentes..."
+    mkdir -p "$HOME/.local/share"
     rm -rf "$HOME/.local/share/fonts"
-    ln -srv "$DOTFILES_DIR/configs/fonts" "$HOME/.local/share/fonts"#> /dev/null 2>&1
+    ln -s "$DOTFILES_DIR/configs/fonts" "$HOME/.local/share/fonts"
+    fc-cache -fv > /dev/null 2>&1
     ok "Listo"
 
     log "Configurando aplicaciones..."

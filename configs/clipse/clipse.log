@@ -1,0 +1,469 @@
+2025/12/26 16:06:22 logger.go:29: INFO: CUSTOM THEME DISABLED
+2025/12/26 16:07:04 logger.go:29: INFO: CUSTOM THEME DISABLED
+2025/12/26 16:09:46 logger.go:29: INFO: Killing pid 9470, cmd clipse
+2025/12/26 16:10:23 logger.go:21: ERROR: failed to decode image file for preview | open /home/lugo/.config/clipse/tmp_files/58136-98500482.png: no such file or directory
+2025/12/26 16:10:46 logger.go:21: ERROR: failed to decode image file for preview | open /home/lugo/.config/clipse/tmp_files/58136-98500482.png: no such file or directory
+2025/12/26 16:10:52 logger.go:29: INFO: Killing pid 16703, cmd clipse
+2025/12/26 16:12:37 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2025/12/26 16:12:37 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2025/12/26 16:12:51 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2025/12/26 16:12:51 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/32801-820562510.png
+2025/12/26 21:50:10 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/28330-978127939.png
+2025/12/26 21:53:22 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/38063-451708039.png
+2025/12/26 21:55:20 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/30197-839771822.png
+2025/12/26 21:55:32 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/27320-244492376.png
+2025/12/26 21:59:16 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/34211-009264197.png
+2025/12/26 22:02:15 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/29795-477139611.png
+2025/12/26 22:06:45 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/26499-672185576.png
+2025/12/26 22:07:41 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/37664-993410686.png
+2025/12/26 22:08:04 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/29206-092524120.png
+2025/12/27 17:11:58 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2025/12/27 17:11:58 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2025/12/27 17:15:11 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/28669-909044832.png
+2025/12/27 17:15:45 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/23125-339429212.png
+2025/12/27 17:20:21 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/27182-534270919.png
+2025/12/27 17:23:12 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/25435-685297191.png
+2025/12/27 17:23:26 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/31400-863324429.png
+2025/12/27 17:26:08 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/28316-929749742.png
+2025/12/27 17:30:18 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/19555-680215560.png
+2025/12/27 17:31:59 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/30329-937793831.png
+2025/12/27 17:34:50 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/21991-432338685.png
+2025/12/27 17:37:01 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/20156-707490000.png
+2025/12/27 17:38:00 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/29525-940073321.png
+2025/12/27 17:40:56 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/46793-467523926.png
+2025/12/27 17:41:57 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/37478-347363209.png
+2025/12/27 17:44:36 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/36990-028044811.png
+2025/12/27 17:45:25 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/43765-604101123.png
+2025/12/27 17:47:00 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/40667-815038777.png
+2025/12/27 17:50:58 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/48277-017987273.png
+2025/12/27 17:53:37 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/42005-445024380.png
+2025/12/27 17:55:11 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/41760-663908333.png
+2025/12/27 17:56:54 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/43994-459814380.png
+2025/12/27 17:57:54 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/44967-453233188.png
+2025/12/27 17:58:59 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/60048-788925084.png
+2025/12/27 18:02:01 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/38026-005312830.png
+2025/12/27 18:08:06 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/55971-323696528.png
+2025/12/27 18:09:28 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/49422-540998006.png
+2025/12/27 18:09:41 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/48916-494277538.png
+2025/12/27 18:09:49 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/45744-947151368.png
+2025/12/27 18:11:16 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/44796-081769437.png
+2025/12/27 18:11:25 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/41704-979584890.png
+2025/12/27 18:13:42 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/56615-569575036.png
+2025/12/27 18:33:05 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/42048-508682495.png
+2025/12/28 09:27:52 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2025/12/28 09:27:52 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2025/12/28 09:43:43 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/39165-720007904.png
+2025/12/28 09:56:15 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/34052-789526386.png
+2025/12/28 09:59:33 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/29875-750953936.png
+2025/12/28 10:01:13 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/33215-765329165.png
+2025/12/28 10:01:18 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/19163-347635672.png
+2025/12/28 10:03:29 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/16610-312952764.png
+2025/12/28 10:03:52 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/156100-295097269.png
+2025/12/28 10:06:05 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/31622-378680425.png
+2025/12/28 10:10:33 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/62252-159329259.png
+2025/12/28 10:16:02 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/60961-043315108.png
+2025/12/28 10:22:44 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/34314-555149501.png
+2025/12/28 10:23:04 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/16987-194854329.png
+2025/12/28 10:28:02 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/13024-256265102.png
+2025/12/28 10:42:00 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/30525-787229586.png
+2025/12/28 10:43:13 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/27504-078530829.png
+2025/12/28 10:45:40 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/37549-377797885.png
+2025/12/28 10:46:58 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/39368-196798219.png
+2025/12/28 10:48:14 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/39960-488883803.png
+2025/12/28 10:50:05 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/43557-663544695.png
+2025/12/28 10:50:35 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/42587-427314509.png
+2025/12/28 11:59:43 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/31599-148509439.png
+2025/12/28 12:16:37 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/44438-870339213.png
+2025/12/28 12:38:06 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/35828-840206023.png
+2025/12/28 12:39:48 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/30869-645739076.png
+2025/12/28 12:47:45 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/33220-096286872.png
+2025/12/28 14:32:33 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/40189-084859727.png
+2025/12/28 14:33:39 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/43959-565392459.png
+2025/12/28 14:35:29 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/41639-218327756.png
+2025/12/28 14:39:53 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/464319-753133411.png
+2025/12/28 15:07:14 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/51343-703446667.png
+2025/12/28 15:12:19 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/351908-27092433.png
+2025/12/28 15:20:29 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/91400-664578949.png
+2025/12/28 15:31:30 logger.go:21: ERROR: failed to delete image file: /home/lugo/.config/clipse/tmp_files/58136-98500482.png
+2025/12/29 14:00:31 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2025/12/29 14:00:31 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2025/12/30 18:22:24 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2025/12/30 18:22:24 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2026/01/01 06:54:43 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2026/01/01 06:54:43 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2026/01/01 12:56:20 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/01 12:57:03 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/01 13:01:03 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/01 13:07:52 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/01 13:09:33 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/01 13:11:20 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/01 13:11:59 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/01 13:12:26 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/01 13:17:46 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/01 13:20:02 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/01 13:20:02 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/01 13:20:02 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/01 13:20:02 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2026/01/01 13:20:02 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2026/01/01 13:20:15 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/01 13:20:57 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/01 13:21:08 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/01 13:22:14 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/01 13:22:20 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/01 13:22:53 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/01 13:23:07 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/01 13:24:05 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/01 13:24:10 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/01 13:24:43 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 13:39:55 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 13:39:55 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 13:39:55 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 13:39:55 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2026/01/02 13:39:55 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2026/01/02 15:09:04 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 15:11:46 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 15:11:51 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 15:15:24 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 15:16:16 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 15:20:19 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 15:28:51 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 15:32:53 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 15:33:41 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 15:34:55 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 15:38:32 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 15:39:35 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 15:39:50 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 15:40:02 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 15:40:42 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 15:41:28 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 15:41:47 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 15:41:56 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 15:42:38 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 15:43:46 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 15:46:02 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 15:49:21 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 15:50:47 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 16:22:05 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 16:22:56 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 16:23:31 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 16:25:17 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 16:32:44 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 16:32:54 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 16:35:38 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 16:54:26 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 16:54:41 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 16:54:56 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 16:57:04 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 16:57:27 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 16:57:28 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 16:59:16 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 17:00:14 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 17:00:33 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 17:02:36 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 17:04:35 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 17:07:22 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 17:25:29 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 17:26:42 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 17:26:59 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 17:29:06 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 17:29:41 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 17:30:19 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 17:31:13 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 17:32:32 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 17:33:17 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 17:33:20 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 20:26:43 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 20:26:43 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 20:26:43 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/02 20:26:43 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2026/01/02 20:26:43 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2026/01/03 11:00:10 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 11:00:10 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 11:00:10 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 11:00:10 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2026/01/03 11:00:10 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2026/01/03 13:09:01 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 13:10:59 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 13:11:18 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 13:12:47 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 13:18:35 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 13:22:27 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 13:24:00 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 15:10:00 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 15:13:36 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 15:20:03 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 15:28:14 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 15:33:07 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 15:44:51 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 15:44:58 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 15:45:03 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 15:53:25 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 15:55:37 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 15:55:54 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 15:56:08 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 15:57:54 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 15:58:08 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 15:58:11 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 15:59:51 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:00:47 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:09:57 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:10:33 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:11:14 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:13:39 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:13:50 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:14:41 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:15:56 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:27:03 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:28:01 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:30:00 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:30:04 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:30:11 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:30:50 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:31:03 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:31:07 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:31:30 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:31:52 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:32:23 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:34:39 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:36:57 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:37:08 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:37:28 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:38:16 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:38:39 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:41:52 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:42:51 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:44:17 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:47:36 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:48:28 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:50:09 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:53:06 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:53:23 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:53:35 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:54:02 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:55:17 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 16:56:51 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 17:00:48 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 17:46:26 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 17:50:12 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 17:51:09 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 17:53:27 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 17:54:24 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 17:58:25 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 17:58:31 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 17:59:37 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 18:01:33 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 18:04:56 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 18:06:47 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 18:09:32 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 18:10:17 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 18:12:13 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 18:12:44 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 18:13:54 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 18:14:18 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 18:14:48 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 18:15:08 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 18:18:07 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 18:20:30 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 18:21:22 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 18:22:32 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 18:22:52 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 18:23:45 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 18:26:20 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 18:27:45 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 18:28:10 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 18:30:12 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 18:30:39 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 18:33:07 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 18:43:27 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 18:43:35 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 19:30:47 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 19:34:59 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 19:35:35 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 19:36:01 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 19:37:07 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 19:38:33 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 19:39:53 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 19:41:39 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 19:42:20 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 19:43:52 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 19:45:03 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 19:45:10 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 19:46:39 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 19:47:21 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 19:49:50 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 19:50:30 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 19:50:59 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 19:51:35 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 19:52:18 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 19:52:31 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 19:52:49 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 19:53:24 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 19:59:01 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:00:04 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:00:12 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:00:58 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:03:36 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:07:25 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:09:47 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:12:29 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:12:29 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:12:29 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:12:29 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2026/01/03 20:12:29 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2026/01/03 20:13:01 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:13:43 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:15:53 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:16:35 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:17:32 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:18:30 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:23:48 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:24:25 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:27:37 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:28:22 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:28:23 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:30:51 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:31:33 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:31:52 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:34:02 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:34:43 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:35:11 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:36:38 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:37:28 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:41:13 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:44:25 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:45:34 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:54:02 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:54:12 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:55:23 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/03 20:56:15 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 00:41:46 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 00:43:34 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 00:46:38 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 00:47:00 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 00:47:52 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 00:48:04 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 00:48:30 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 00:49:18 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 00:54:43 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 00:57:42 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 09:35:54 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 09:35:54 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 09:35:54 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 09:35:54 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2026/01/04 09:35:54 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2026/01/04 09:43:53 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 09:45:05 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 09:47:51 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 09:53:20 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 12:29:24 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 12:30:47 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 12:31:11 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 12:31:54 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 12:32:14 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 12:32:44 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 12:33:02 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 12:33:21 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 12:36:02 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 12:36:41 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 12:36:50 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 12:36:51 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 12:36:51 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 12:37:54 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 12:43:05 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 12:43:19 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 12:44:11 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 12:45:03 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 13:07:28 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 13:09:09 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 13:09:51 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 13:18:57 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 13:22:07 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 13:22:18 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 13:25:25 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 13:26:08 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 13:34:50 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 13:36:35 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 13:37:07 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 13:37:24 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 13:39:30 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 13:44:28 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 13:46:21 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 13:47:50 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 13:47:53 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 13:51:44 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 13:52:08 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 14:20:56 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 14:21:42 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 14:22:21 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 14:33:25 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 14:35:11 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 14:35:49 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 14:36:18 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 14:40:01 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 14:42:24 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 14:45:06 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 14:45:18 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 14:45:33 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 14:47:15 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 14:47:43 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 14:47:46 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 14:48:10 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 14:49:01 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 14:49:56 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 14:50:59 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 14:51:31 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 14:52:49 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 14:52:56 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 14:53:25 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 14:54:55 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 14:55:19 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 15:11:59 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 15:14:03 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 15:14:21 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 15:14:37 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 15:14:39 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 15:14:39 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 15:15:38 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 15:17:40 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 15:18:14 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 15:20:43 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 15:21:17 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 15:25:45 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 15:33:19 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 15:38:02 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 15:47:59 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 15:49:23 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 15:49:28 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 15:49:43 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 15:50:10 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 15:51:27 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 15:54:45 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 15:55:53 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 15:56:38 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 15:56:44 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 15:57:06 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 16:05:14 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 16:06:02 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 16:06:26 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 16:08:43 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 16:10:25 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 16:10:51 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 16:11:00 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 16:11:09 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 16:11:15 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 16:11:20 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 16:11:31 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 16:11:38 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 16:11:47 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 16:11:56 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 16:14:55 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 16:17:56 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 16:27:38 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 17:18:52 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 17:23:03 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 17:26:02 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 17:26:09 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 17:27:39 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 17:28:33 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 17:29:31 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/01/04 17:30:26 logger.go:29: INFO: CUSTOM THEME DISABLED
