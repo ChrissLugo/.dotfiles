@@ -9,7 +9,7 @@ pokemon-colorscripts -r --no-title
 export ZSH="$HOME/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="bira"
+ZSH_THEME="nicoulaj"
 
 
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
@@ -28,8 +28,9 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=245,bold'
 alias ls='lsd'
 alias ll='lsd -lh'
 alias la='lsd -a'
-
+alias office='onlyoffice-desktopeditors'
 alias code='codium'
+alias dots='codium ~/.dotfiles'
 
 #hacer ls al cambiar de directorio
 function chpwd() {

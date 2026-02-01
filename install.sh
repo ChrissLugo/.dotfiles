@@ -20,19 +20,22 @@ PACMAN_PACKAGES=(
     dunst waybar nautilus zsh hyprshot zoxide wl-clipboard noto-fonts-emoji
     xdg-desktop-portal-hyprland hyprpolkitagent nwg-look qt5-quickcontrols2
     layer-shell-qt qt5ct qt6ct qt5-wayland qt6-wayland kvantum
-    ntfs-3g exfat-utils dosfstools syncthing grim imagemagick hyprlock lsd
+    ntfs-3g exfat-utils dosfstools syncthing grim imagemagick hyprlock lsd 
+    tesseract tesseract-data-eng curl jq libnotify xdg-utils
+
+
 )
 
 AUR_PACKAGES=(
     blueman-git hellwal waypaper python-pywalfox pokemon-colorscripts-git 
-    clipse nmgui-bin bongocat ttf-nerd-fonts-symbols swww-git swayosd-git quickshell sherlock-launcher-git
-    ttf-meslo-nerd
+    clipse nmgui-bin bongocat ttf-nerd-fonts-symbols swww-git swayosd-git sherlock-launcher-git
+    ttf-meslo-nerd wayscriber quickshell-git
 )
 
 install_pacman_packages() {
     log "Sincronizando bases e instalando paquetes de pacman..."
     sudo pacman -Sy --noconfirm #> /dev/null 2>&1
-    sudo pacman -S --needed --noconfirm "${PACMAN_PACKAGES[@]}" #> /dev/null 2>&1
+    sudo pacman -S --needed "${PACMAN_PACKAGES[@]}" #> /dev/null 2>&1
     ok "Paquetes Pacman instalados exitosamente"
 }
 
@@ -42,7 +45,7 @@ install_aur_packages() {
     return
     fi
         log "Instalando paquetes AUR con yay..."
-        yay -S --noconfirm --needed "${AUR_PACKAGES[@]}" #> /dev/null 2>&1
+        yay -S --needed "${AUR_PACKAGES[@]}" #> /dev/null 2>&1
         ok "Paquetes AUR instalados exitosamente"
 
 }
@@ -196,6 +199,10 @@ configs(){
     fc-cache -fv > /dev/null 2>&1
     ok "Listo"
 
+    mkdir -p ~/.config/quickshell 
+    rm -rf ~/.config/quickshell/HyprQuickSnip
+    git clone https://github.com/Ronin-CK/HyprQuickSnip.git ~/.config/quickshell/HyprQuickSnip
+    
     log "Configurando aplicaciones..."
     # Inicia daemon si no está
     if ! pgrep -x swww-daemon >/dev/null; then
