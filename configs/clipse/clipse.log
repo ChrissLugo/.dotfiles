@@ -1993,3 +1993,38 @@
 2026/02/01 13:10:08 logger.go:29: INFO: CUSTOM THEME DISABLED
 2026/02/01 13:10:59 logger.go:29: INFO: CUSTOM THEME DISABLED
 2026/02/01 13:11:14 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:24:55 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:27:07 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:28:10 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:29:15 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:29:15 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:29:15 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:29:15 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2026/02/01 13:29:15 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2026/02/01 13:29:44 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:31:19 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:31:19 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:31:19 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:31:19 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2026/02/01 13:31:19 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2026/02/01 13:33:15 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:34:12 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:35:25 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:35:43 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:37:25 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:37:25 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:37:25 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:37:25 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2026/02/01 13:37:25 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2026/02/01 13:40:06 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:44:21 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:45:40 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:45:50 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:45:51 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:45:51 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:45:51 logger.go:21: ERROR: failed to create virtual keyboard: failed to create virtual keyboard device: could not open device file
+2026/02/01 13:46:48 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:51:06 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:51:18 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:51:43 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/01 13:51:50 logger.go:29: INFO: CUSTOM THEME DISABLED

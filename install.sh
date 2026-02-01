@@ -16,20 +16,18 @@ ok() { printf '\e[1;32m[OK] %s\e[0m\n' "$*";}
 #Listas
 PACMAN_PACKAGES=(
     cava rofi-wayland hyprpicker otf-codenewroman-nerd nwg-displays
-    pavucontrol brightnessctl network-manager-applet nm-connection-editor
+    pavucontrol brightnessctl nm-connection-editor
     dunst waybar nautilus zsh hyprshot zoxide wl-clipboard noto-fonts-emoji
     xdg-desktop-portal-hyprland hyprpolkitagent nwg-look qt5-quickcontrols2
     layer-shell-qt qt5ct qt6ct qt5-wayland qt6-wayland kvantum
     ntfs-3g exfat-utils dosfstools syncthing grim imagemagick hyprlock lsd 
     tesseract tesseract-data-eng curl jq libnotify xdg-utils
-
-
 )
 
 AUR_PACKAGES=(
     blueman-git hellwal waypaper python-pywalfox pokemon-colorscripts-git 
-    clipse nmgui-bin bongocat ttf-nerd-fonts-symbols swww-git swayosd-git
-    ttf-meslo-nerd wayscriber quickshell-git tofi
+    clipse bongocat ttf-nerd-fonts-symbols swww-git swayosd-git
+    ttf-meslo-nerd wayscriber quickshell-git tofi airctl
 )
 
 install_pacman_packages() {
