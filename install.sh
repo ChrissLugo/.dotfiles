@@ -28,8 +28,8 @@ PACMAN_PACKAGES=(
 
 AUR_PACKAGES=(
     blueman-git hellwal waypaper python-pywalfox pokemon-colorscripts-git 
-    clipse nmgui-bin bongocat ttf-nerd-fonts-symbols swww-git swayosd-git sherlock-launcher-git
-    ttf-meslo-nerd wayscriber quickshell-git
+    clipse nmgui-bin bongocat ttf-nerd-fonts-symbols swww-git swayosd-git
+    ttf-meslo-nerd wayscriber quickshell-git tofi
 )
 
 install_pacman_packages() {
@@ -154,9 +154,10 @@ configs(){
     ln -srv "$DOTFILES_DIR/configs/rofi" "$HOME/.config/rofi" #> /dev/null 2>&1
     ok "Listo"
 
-    log "Aplicando configuraciones de Sherlock..."
-    rm -rf "$HOME/.config/sherlock"
-    ln -srv "$DOTFILES_DIR/configs/sherlock" "$HOME/.config/sherlock" #> /dev/null 2>&1
+    #Tofi
+    log "Aplicando configuraciones de tofi..."
+    rm -rf "$HOME/.config/tofi"
+    ln -srv "$DOTFILES_DIR/configs/tofi" "$HOME/.config/tofi" #> /dev/null 2>&1
     ok "Listo"
 
     #Kitty
