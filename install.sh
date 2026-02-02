@@ -120,11 +120,14 @@ configs(){
     sudo rm -f "/etc/sddm.conf"
     sudo ln -srv "$DOTFILES_DIR/configs/sddm.conf" "/etc/sddm.conf" #> /dev/null 2>&1
     
-    #sddm minecraft theme
-    sudo rm -rf ~/sddm-theme-minesddm
-    git clone https://github.com/Davi-S/sddm-theme-minesddm.git ~/sddm-theme-minesddm #> /dev/null 2>&1
-    sudo cp -r ~/sddm-theme-minesddm/minesddm /usr/share/sddm/themes/
-    sudo rm -rf ~/sddm-theme-minesddm
+    #sddm silent theme
+    # sudo rm -rf /usr/share/sddm/themes/silent
+    # sudo cp -r ~/sddm-theme-minesddm/minesddm /usr/share/sddm/themes/
+    # sudo rm -rf ~/sddm-theme-minesddm
+
+    log "Aplicando tema sddm (Copiando archivos)..."
+    sudo rm -rf /usr/share/sddm/themes/silent
+    sudo cp -r "$DOTFILES_DIR/configs/silent" "/usr/share/sddm/themes/"
     ok "Listo"
 
     #kvantum themes
