@@ -3,7 +3,7 @@ source ~/.cache/hellwal/variables.sh
 sh ~/.cache/hellwal/terminal.sh
 
 pokemon-colorscripts -r --no-title
-#toilet -t -f mono12 -F metal "ZLugoΣ"   
+#toilet -t -f mono12 -F metal "ZLugoΣ"
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -30,7 +30,9 @@ alias ll='lsd -lh'
 alias la='lsd -a'
 alias office='onlyoffice-desktopeditors'
 alias code='codium'
-alias dots='codium ~/.dotfiles'
+alias dots='zeditor ~/.dotfiles'
+alias zed='zeditor'
+alias tesis='zed ~/Projects/Detection-Metabolic-Syndrome & zed ~/Projects/Detection-Metabolic-Syndrome-API & disown'
 
 #hacer ls al cambiar de directorio
 function chpwd() {
