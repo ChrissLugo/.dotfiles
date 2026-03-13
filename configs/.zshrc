@@ -1,9 +1,9 @@
-#Import template for hellwal
 source ~/.cache/hellwal/variables.sh
 sh ~/.cache/hellwal/terminal.sh
 
-pokemon-colorscripts -r --no-title
-#toilet -t -f mono12 -F metal "ZLugoΣ"
+fastfetch
+# pokemon-colorscripts -r --no-title
+# toilet -t -f mono12 -F metal "ZLinux"
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -35,6 +35,22 @@ alias zed='zeditor'
 alias tesis='zed ~/Projects/Detection-Metabolic-Syndrome & zed ~/Projects/Detection-Metabolic-Syndrome-API & disown'
 
 #hacer ls al cambiar de directorio
+# Corrected
 function chpwd() {
     ls
 }
+
+
+# Cargar el plugin
+source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
+
+# Configurar fzf-tab para que use chafa al previsualizar archivos
+zstyle ':fzf-tab:complete:*:*' fzf-preview '
+    if [[ -d $realpath ]]; then
+        ls --color=always $realpath
+    elif [[ -f $realpath ]]; then
+        chafa --size=40x40 $realpath
+    fi
+'
+
+fpath=(~/.zsh/completions $fpath)

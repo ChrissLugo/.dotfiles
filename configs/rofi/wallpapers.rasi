@@ -1,0 +1,78 @@
+@import "~/.cache/hellwal/rofi.rasi"
+
+configuration {
+    show-icons:                     true;
+    hover-select:                   true;
+    me-select-entry:                "";
+    me-accept-entry:                "MousePrimary";
+}
+
+* {
+    bg-col:       @background;
+    border-col:   #89b4fa;
+    selected-col: #ffffff2c;
+    font:         "JetBrains Mono 11";
+    background-color: transparent;
+    text-color:   @text-col;
+}
+
+window {
+    background-color: @bg-col;
+    border-radius: 20px;
+    padding:      0px;
+
+    location:         south;      
+    anchor:           south;      
+    y-offset:         -10px;      
+}
+
+mainbox {
+    spacing:      15px;
+    children:     [  listview ];
+}
+
+prompt {
+    background-color: @border-col;
+    text-color:   @bg-col;
+    padding:      10px 15px;
+    border-radius: 8px;
+}
+
+entry {
+    padding:      10px;
+    background-color: @selected-col;
+    border-radius: 8px;
+    placeholder:  "Buscar fondo...";
+    placeholder-color: #6c7086;
+}
+
+listview {
+    columns:      3;
+    lines:        1;
+    spacing:      2px;
+    cycle:        true;
+    dynamic:      true;
+    layout:       vertical;
+    scrollbar:    false;
+}
+
+element {
+    children:     [ element-icon ];
+    orientation:  vertical;
+    padding:      4px;
+    border-radius: 20px;
+    cursor:       pointer;
+}
+
+element selected {
+    background-color: @selected-col;
+    border:           2px solid;
+    border-color:     @color1;
+}
+
+element-icon {
+    size:         200px;
+    cursor:       inherit;
+    horizontal-align: 0.5;
+    border-radius: 20px;
+}

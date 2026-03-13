@@ -2,15 +2,15 @@
     "layer": "top",
     "position": "left",
     "reload_style_on_change": true,
-    "margin": "6 0 6 0",
-    "exclusive": false,
+    "margin": "0 0 0 0",
+    "exclusive": true,
     "modules-left": [
-        // "custom/cava",
+        //"custom/cava",
         "hyprland/language",
         "custom/separator1",
         "clock",
         "custom/separator1",
-        "network",
+        "custom/orbit",
         "custom/separator1",
         "tray"
     ],
@@ -206,8 +206,15 @@
         "justify": "center"
     },
     "custom/cava": {
-        "rotate": 270,
+        "rotate": 360,
         "format": "{}",
         "exec": "~/.config/waybar/scripts/cava.sh"
+    },
+    "custom/orbit": {
+        "exec": "orbit waybar-status",
+        "return-type": "json",
+        "interval": 10,
+        "on-click": "orbit toggle",
+        "format": "󱘖"
     }
 }

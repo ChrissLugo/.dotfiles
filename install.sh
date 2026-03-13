@@ -2,10 +2,6 @@ set -euo pipefail
 
 #Variables
 DOTFILES_DIR=$(pwd)
-HAS_YAY=0
-
-#Detectar yay
-if command -v yay >/dev/null 2>&1; then HAS_YAY=1; fi
 
 #utilidades
 log() { printf '\e[1;34m[INFO] %s\e[0m %s\n' "$*"; }
@@ -15,19 +11,18 @@ ok() { printf '\e[1;32m[OK] %s\e[0m\n' "$*";}
 
 #Listas
 PACMAN_PACKAGES=(
-    cava rofi-wayland hyprpicker otf-codenewroman-nerd nwg-displays
-    pavucontrol brightnessctl nm-connection-editor
-    dunst waybar nautilus zsh hyprshot zoxide wl-clipboard noto-fonts-emoji
-    xdg-desktop-portal-hyprland hyprpolkitagent nwg-look qt5-quickcontrols2
-    layer-shell-qt qt5ct qt6ct qt5-wayland qt6-wayland kvantum
-    ntfs-3g exfat-utils dosfstools syncthing grim imagemagick hyprlock lsd 
-    tesseract tesseract-data-eng curl jq libnotify xdg-utils
+    cava rofi-wayland hyprpicker nwg-displays
+    brightnessctl swaync waybar nautilus zsh hyprshot zoxide wl-clipboard
+    xdg-desktop-portal-hyprland hyprpolkitagent nwg-look
+    ntfs-3g exfat-utils dosfstools syncthing lsd 
+    tesseract tesseract-data-eng xdg-utils foot
 )
 
 AUR_PACKAGES=(
-    blueman-git hellwal waypaper python-pywalfox pokemon-colorscripts-git 
-    clipse bongocat ttf-nerd-fonts-symbols swww-git swayosd-git
-    ttf-meslo-nerd wayscriber quickshell-git tofi airctl
+    hellwal python-pywalfox
+    clipse  ttf-nerd-fonts-symbols awww-git
+    quickshell-git tofi orbit-wifi fluent-icon-theme-git
+    kripton-theme-git quickshell-overview-git
 )
 
 install_pacman_packages() {
@@ -38,13 +33,9 @@ install_pacman_packages() {
 }
 
 install_aur_packages() {
-    if [ "$HAS_YAY" -ne 1 ]; then
-        warn "No encontré 'yay'. Saltando instalación AUR. Si quieres instalar AUR, instala yay o adapta el script."
-    return
-    fi
-        log "Instalando paquetes AUR con yay..."
-        yay -S --needed "${AUR_PACKAGES[@]}" #> /dev/null 2>&1
-        ok "Paquetes AUR instalados exitosamente"
+    log "Instalando paquetes AUR con yay..."
+    yay -S --needed "${AUR_PACKAGES[@]}" #> /dev/null 2>&1
+    ok "Paquetes AUR instalados exitosamente"
 
 }
 
@@ -67,18 +58,10 @@ configs(){
 
     #Iconos
     log "Aplicando iconos..."
-    rm -rf "$HOME/.local/share/icons"
-    ln -srv "$DOTFILES_DIR/configs/icons" "$HOME/.local/share" #> /dev/null 2>&1
-
-    gsettings set org.gnome.desktop.interface icon-theme "kora"
-
+    gsettings set org.gnome.desktop.interface icon-theme "Fluent orange dark"
     ok "Listo"
 
     #Themes
-    log "Aplicando temas..."
-    rm -rf "$HOME/.local/share/themes"
-    ln -srv "$DOTFILES_DIR/configs/themes" "$HOME/.local/share" #> /dev/null 2>&1
-
     gsettings set org.gnome.desktop.interface gtk-theme Kripton
     gsettings set org.gnome.desktop.wm.preferences theme Kripton
     ok "Listo"
@@ -87,25 +70,20 @@ configs(){
     hyprctl setcursor macOS 25 #> /dev/null 2>&1
     hyprctl reload #> /dev/null 2>&1
 
-    #Red
-    sudo systemctl enable --now NetworkManager
-
-    #Waypaper
-    log "Aplicando configuraciones de Waypaper..."
-    rm -rf "$HOME/.config/waypaper"
-    ln -srv "$DOTFILES_DIR/configs/waypaper" "$HOME/.config/waypaper" #> /dev/null 2>&1
-    ok "Listo"
-
     #Hellwal
     log "Aplicando configuraciones de Hellwal..."
     rm -rf "$HOME/.config/hellwal"
     ln -srv "$DOTFILES_DIR/configs/hellwal" "$HOME/.config/hellwal" #> /dev/null 2>&1
 
-    mkdir -p ~/.cache/hellwal
+    mkdir -p ~/.cache/hellwal/cache
     mkdir -p ~/.cache/wal
 
-    ln -sf ~/.cache/hellwal/colors ~/.cache/wal/colors #> /dev/null 2>&1
-    ln -sf ~/.cache/hellwal/colors.json ~/.cache/wal/colors.json #> /dev/null 2>&1
+    ln -sf ~/.cache/hellwal/tofiConfig ~/.config/tofi/config
+    ln -sf ~/.cache/hellwal/gtk.css ~/.config/gtk-3.0/colors.css
+    ln -sf ~/.cache/hellwal/gtk.css ~/.config/gtk-4.0/colors.css
+    ln -sf ~/.cache/hellwal/clipse-theme.json ~/.config/clipse/custom_theme.json
+    ln -sf ~/.cache/hellwal/orbit-theme.toml ~/.config/orbit/theme.toml
+    ln -sf ~/.cache/hellwal/colors.json ~/.cache/wal/colors.json
 
     ok "Listo"
 
@@ -113,40 +91,6 @@ configs(){
     log "Aplicando configuraciones de Waybar..."
     rm -rf "$HOME/.config/waybar"
     ln -srv "$DOTFILES_DIR/configs/waybar" "$HOME/.config/waybar" #> /dev/null 2>&1
-    ok "Listo"
-
-    #sddm
-    log "Aplicando configuraciones de SDDM..."
-    sudo rm -f "/etc/sddm.conf"
-    sudo ln -srv "$DOTFILES_DIR/configs/sddm.conf" "/etc/sddm.conf" #> /dev/null 2>&1
-    
-    #sddm silent theme
-    # sudo rm -rf /usr/share/sddm/themes/silent
-    # sudo cp -r ~/sddm-theme-minesddm/minesddm /usr/share/sddm/themes/
-    # sudo rm -rf ~/sddm-theme-minesddm
-
-    log "Aplicando tema sddm (Copiando archivos)..."
-    sudo rm -rf /usr/share/sddm/themes/silent
-    sudo cp -r "$DOTFILES_DIR/configs/silent" "/usr/share/sddm/themes/"
-    ok "Listo"
-
-    #kvantum themes
-    sudo rm -rf ./KvLibadwaita
-    git clone https://github.com/GabePoel/KvLibadwaita.git #> /dev/null 2>&1
-    cd KvLibadwaita
-    ./install.sh
-    sudo rm -rf ~/KvLibadwaita
-    sudo rm -rf ./KvLibadwaita
-    ok "Listo"
-
-    #Overview
-    sudo rm -rf ~/.config/quickshell/overview/
-    git clone https://github.com/Shanu-Kumawat/quickshell-overview ~/.config/quickshell/overview  #> /dev/null 2>&1
-    ok "Listo"
-
-    #Hyprquickshot
-    sudo rm -rf ~/.config/quickshell/hyprquickshot
-    git clone https://github.com/jamdon2/hyprquickshot ~/.config/quickshell/hyprquickshot #> /dev/null 2>&1
     ok "Listo"
 
     #Rofi
@@ -161,16 +105,10 @@ configs(){
     ln -srv "$DOTFILES_DIR/configs/tofi" "$HOME/.config/tofi" #> /dev/null 2>&1
     ok "Listo"
 
-    #Kitty
-    log "Aplicando configuraciones de Kitty..."
-    rm -rf "$HOME/.config/kitty"
-    ln -srv "$DOTFILES_DIR/configs/kitty" "$HOME/.config/kitty" #> /dev/null 2>&1
-    ok "Listo"
-
-    #Dunst
-    log "Aplicando configuraciones de Dunst..."
-    rm -rf "$HOME/.config/dunst"
-    ln -srv "$DOTFILES_DIR/configs/dunst" "$HOME/.config/dunst" #> /dev/null 2>&1
+    #Foot terminal
+    log "Aplicando configuraciones de Foot terminal..."
+    rm -rf "$HOME/.config/foot"
+    ln -srv "$DOTFILES_DIR/configs/foot" "$HOME/.config/foot" #> /dev/null 2>&1
     ok "Listo"
 
     # OH MY ZSH 
@@ -189,46 +127,28 @@ configs(){
 
     rm -f "$HOME/.zshrc"
     ln -sv "$DOTFILES_DIR/configs/.zshrc" "$HOME/.zshrc" #> /dev/null 2>&1
-
-    #Bongocat
-    sudo usermod -a -G input $USER
-
-    # Fuentes
-    log "Aplicando configuraciones de las Fuentes..."
-    mkdir -p "$HOME/.local/share"
-    rm -rf "$HOME/.local/share/fonts"
-    ln -s "$DOTFILES_DIR/configs/fonts" "$HOME/.local/share/fonts"
-    fc-cache -fv > /dev/null 2>&1
-    ok "Listo"
-
-    mkdir -p ~/.config/quickshell 
-    rm -rf ~/.config/quickshell/HyprQuickSnip
-    git clone https://github.com/Ronin-CK/HyprQuickSnip.git ~/.config/quickshell/HyprQuickSnip
     
     log "Configurando aplicaciones..."
     # Inicia daemon si no está
     if ! pgrep -x swww-daemon >/dev/null; then
-    swww-daemon &
-    # Espera a que el socket exista
-    while ! swww query >/dev/null 2>&1; do
-        sleep 0.1
-    done
-fi
+        awww-daemon &
+        # Espera a que el socket exista
+        while ! swww query >/dev/null 2>&1; do
+            sleep 0.1
+        done
+    fi
+
+    #GTK
+    sudo mkdir -p "$HOME/.config/gtk-3.0"
+    sudo mkdir -p "$HOME/.config/gtk-4.0"
+
+    echo "@import 'colors.css';" > "$HOME/.config/gtk-3.0/gtk.css"
+    echo "@import 'colors.css';" > "$HOME/.config/gtk-4.0/gtk.css"
 
     # Aplica wallpaper
-    swww img "$DOTFILES_DIR/configs/wallpaper.jpg" #> /dev/null 2>&1
-
-    # Hellwal
-    hellwal -i "$DOTFILES_DIR/configs/wallpaper.jpg" --neon-mode --bright-offset 1  #> /dev/null 2>&1
-
-    pkill -USR2 waybar #> /dev/null 2>&1
-
-    # Actualiza pywalfox
-    pywalfox update & #> /dev/null 2>&1
-
-    # Bongocat
-    bongocat -t -c "$DOTFILES_DIR/configs/bongocat/bongocat.conf" #> /dev/null 2>&1 &
-
+    sudo chmod +x "$DOTFILES_DIR/configs/hellwal/changeWallpaper.sh"
+    sudo chmod +x "$DOTFILES_DIR/configs/rofi/selector.sh"
+    ./configs/hellwal/changeWallpaper.sh ./configs/wallpaper.jpg 
     ok "Listo"
 }
 
@@ -253,9 +173,15 @@ main() {
     
     printTitle
     log "Actualizando sistema antes de comenzar"
-    sudo pacman -Syy #> /dev/null 2>&1
-    sudo pacman -Syu #> /dev/null 2>&1
+    sudo pacman -Syyu
     ok "Listo"
+
+    log "Detectando yay"
+
+    if command -v yay >/dev/null 2>&1; then 
+         log "Instalando yay"
+         sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+    fi
     
     install_pacman_packages
     install_aur_packages
