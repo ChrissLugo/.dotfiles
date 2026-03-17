@@ -67,7 +67,6 @@ element {
 element selected {
     background-color: @selected-col;
     border:           2px solid;
-    border-color:     @color1;
 }
 
 element-icon {

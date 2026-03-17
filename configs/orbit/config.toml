@@ -1,0 +1,8 @@
+# Valid positions: top-left, top-center, top-right,
+#                  center-left, center, center-right,
+#                  bottom-left, bottom-center, bottom-right
+position = "bottom-left"
+margin-top = 10
+margin-bottom = 10
+margin-left = 10
+margin-right = 10
