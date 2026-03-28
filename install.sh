@@ -14,7 +14,7 @@ PACMAN_PACKAGES=(
     cava rofi-wayland hyprpicker nwg-displays
     brightnessctl swaync waybar nautilus zsh hyprshot zoxide wl-clipboard
     xdg-desktop-portal-hyprland hyprpolkitagent nwg-look
-    ntfs-3g exfat-utils dosfstools syncthing lsd 
+    ntfs-3g exfat-utils dosfstools syncthing lsd
     tesseract tesseract-data-eng xdg-utils foot
 )
 
@@ -22,7 +22,7 @@ AUR_PACKAGES=(
     hellwal python-pywalfox
     clipse  ttf-nerd-fonts-symbols awww-git
     quickshell-git tofi orbit-wifi fluent-icon-theme-git
-    kripton-theme-git quickshell-overview-git
+    kripton-theme-git quickshell-overview-git kwybars-git
 )
 
 install_pacman_packages() {
@@ -84,6 +84,7 @@ configs(){
     ln -sf ~/.cache/hellwal/clipse-theme.json ~/.config/clipse/custom_theme.json
     ln -sf ~/.cache/hellwal/orbit-theme.toml ~/.config/orbit/theme.toml
     ln -sf ~/.cache/hellwal/colors.json ~/.cache/wal/colors.json
+    ln -sf ~/.cache/hellwal/kwybars_custom.toml ~/.config/kwybars/themes/kwybars_custom.toml
 
     ok "Listo"
 
@@ -91,6 +92,11 @@ configs(){
     log "Aplicando configuraciones de Waybar..."
     rm -rf "$HOME/.config/waybar"
     ln -srv "$DOTFILES_DIR/configs/waybar" "$HOME/.config/waybar" #> /dev/null 2>&1
+    ok "Listo"
+
+    log "Aplicando configuraciones de kwybars..."
+    rm -rf "$HOME/.config/kwybars"
+    ln -srv "$DOTFILES_DIR/configs/kwybars" "$HOME/.config/kwybars" #> /dev/null 2>&1
     ok "Listo"
 
     #Rofi
@@ -111,7 +117,7 @@ configs(){
     ln -srv "$DOTFILES_DIR/configs/foot" "$HOME/.config/foot" #> /dev/null 2>&1
     ok "Listo"
 
-    # OH MY ZSH 
+    # OH MY ZSH
     log "instalando OMZSH"
     export RUNZSH=no CHSH=no ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
     export RUNZSH=no CHSH=no ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
@@ -127,16 +133,16 @@ configs(){
 
     rm -f "$HOME/.zshrc"
     ln -sv "$DOTFILES_DIR/configs/.zshrc" "$HOME/.zshrc" #> /dev/null 2>&1
-    
+
     log "Configurando aplicaciones..."
     # Inicia daemon si no está
-    if ! pgrep -x swww-daemon >/dev/null; then
-        awww-daemon &
-        # Espera a que el socket exista
-        while ! swww query >/dev/null 2>&1; do
-            sleep 0.1
-        done
-    fi
+    # if ! pgrep -x swww-daemon >/dev/null; then
+    #     # awww-daemon &
+    #     # Espera a que el socket exista
+    #     while ! swww query >/dev/null 2>&1; do
+    #         sleep 0.1
+    #     done
+    # fi
 
     #GTK
     sudo mkdir -p "$HOME/.config/gtk-3.0"
@@ -148,52 +154,51 @@ configs(){
     # Aplica wallpaper
     sudo chmod +x "$DOTFILES_DIR/configs/hellwal/changeWallpaper.sh"
     sudo chmod +x "$DOTFILES_DIR/configs/rofi/selector.sh"
-    ./configs/hellwal/changeWallpaper.sh ./configs/wallpaper.jpg 
+    ./configs/hellwal/changeWallpaper.sh ./configs/wallpaper.jpg
     ok "Listo"
 }
 
 printTitle(){
    printf '\e[1;32m%s\e[0m\n' "
-    __________.____                                 
-    \____    /|    |    __ __  ____   ____          
-      /     / |    |   |  |  \/ ___\ /  _ \         
-     /     /_ |    |___|  |  / /_/  >  <_> )        
-    /_______ \|_______ \____/\___  / \____/         
-            \/        \/    /_____/                 
-        .___      __    _____.__.__                 
+    __________.____
+    \____    /|    |    __ __  ____   ____
+      /     / |    |   |  |  \/ ___\ /  _ \
+     /     /_ |    |___|  |  / /_/  >  <_> )
+    /_______ \|_______ \____/\___  / \____/
+            \/        \/    /_____/
+        .___      __    _____.__.__
       __| _/_____/  |__/ ____\__|  |   ____   ______
      / __ |/  _ \   __\   __\|  |  | _/ __ \ /  ___/
-    / /_/ (  <_> )  |  |  |  |  |  |_\  ___/ \___ \ 
+    / /_/ (  <_> )  |  |  |  |  |  |_\  ___/ \___ \
     \____ |\____/|__|  |__|  |__|____/\___  >____  >
-         \/                               \/     \/ 
+         \/                               \/     \/
     "
 }
 
 main() {
-    
+
     printTitle
     log "Actualizando sistema antes de comenzar"
     sudo pacman -Syyu
     ok "Listo"
 
-    log "Detectando yay"
+    # log "Detectando yay"
 
-    if command -v yay >/dev/null 2>&1; then 
-         log "Instalando yay"
-         sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
-    fi
-    
-    install_pacman_packages
-    install_aur_packages
+    # if command -v yay >/dev/null 2>&1; then
+    #      log "Instalando yay"
+    #      sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+    # fi
+
+    # install_pacman_packages
+    # install_aur_packages
     configs
 
     echo "
-    ▄▖   ▌    ▜ ▘  ▗   
+    ▄▖   ▌    ▜ ▘  ▗
     ▐ ▛▌▛▌▛▌  ▐ ▌▛▘▜▘▛▌
     ▐ ▙▌▙▌▙▌  ▐▖▌▄▌▐▖▙▌
-                   
+
     "
 }
 
 main "$@"
-

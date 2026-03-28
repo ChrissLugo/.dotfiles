@@ -1,0 +1,33 @@
+[overlay]
+monitor_mode = "primary"
+layer = "background"
+position = "right"
+full_length = true
+width = 100
+anchor_margin = 5
+margin_left = 5
+margin_right = 5
+
+[visualizer]
+layout = "line"
+bar_corner_radius = 0
+segmented_bars = true
+bars = 50
+bar_width = 20
+gap = 5
+framerate = 120
+theme = "kwybars_custom"
+
+# By default daemon is already enabled and configured for you.
+# Use in your config only if you need to customize.
+[daemon]
+enabled = true
+poll_interval_ms = 90
+activity_threshold = 0.035
+activate_delay_ms = 180
+deactivate_delay_ms = 2200
+stop_on_silence = true
+notify_on_error = true
+notify_cooldown_seconds = 45
+overlay_command = "kwybars-overlay"
+overlay_args = []

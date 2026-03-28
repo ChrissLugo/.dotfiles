@@ -2,15 +2,15 @@
     "layer": "top",
     "position": "left",
     "reload_style_on_change": true,
-    "margin": "0 0 0 0",
+    "margin": "0 0 0 0 0",
     "exclusive": true,
     "modules-left": [
         //"custom/cava",
-        "hyprland/language",
-        "custom/separator1",
         "clock",
         "custom/separator1",
-        "custom/orbit",
+        "bluetooth",
+        "custom/separator1",
+        "network",
         "custom/separator1",
         "tray"
     ],
@@ -22,16 +22,16 @@
         "custom/separator1",
         "memory",
         "custom/separator1",
-        "pulseaudio",
+        "hyprland/language",
         "custom/separator1",
         "battery"
     ],
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
-            "active": "",
-            "default": "",
-            "empty": ""
+            "active": "",
+            "default": "",
+            "empty": ""
         },
         "persistent-workspaces": {
             "*": [
@@ -50,7 +50,7 @@
         "escape": true
     },
     "clock": {
-        "format": "{:%I\n%M\n%p}",
+        "format": "{:%H\n%M}",
         "interval": 1,
         "justify": "center",
         "align": 0.5,
@@ -76,7 +76,7 @@
         "tooltip-format-connected": "{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}",
         "tooltip-format-enumerate-connected-battery": "{device_alias} - {device_battery_percentage}%",
-        "on-click": "blueman-manager"
+        "on-click": "orbit toggle --tab bluetooth"
     },
     "battery": {
         "interval": 1,
@@ -140,13 +140,13 @@
     },
     "cpu": {
         "justify": "center",
-        "format": "{usage}%\n<span font='Symbols Nerd Font 14'></span>",
+        "format": "{usage}%\n<span font='Symbols Nerd Font 13'></span>",
         "tooltip": true,
         "interval": 1
     },
     "memory": {
         "justify": "center",
-        "format": "{percentage}%\n<span font='Symbols Nerd Font 14'></span>",
+        "format": "{percentage}%\n<span font='Symbols Nerd Font 12'></span>",
         "interval": 1
     },
     "temperature": {
@@ -202,19 +202,12 @@
             "󰤥",
             "󰤨"
         ],
-        "on-click": "airctl",
+        "on-click": "orbit toggle --tab wifi",
         "justify": "center"
     },
     "custom/cava": {
         "rotate": 360,
         "format": "{}",
         "exec": "~/.config/waybar/scripts/cava.sh"
-    },
-    "custom/orbit": {
-        "exec": "orbit waybar-status",
-        "return-type": "json",
-        "interval": 10,
-        "on-click": "orbit toggle",
-        "format": "󱘖"
     }
 }

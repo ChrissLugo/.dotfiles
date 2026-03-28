@@ -1,0 +1,31 @@
+{
+    "layer": "top",
+    "position": "left",
+    "reload_style_on_change": true,
+    "margin": "0 0 0 0",
+    "exclusive": false,
+    "modules-left": [
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+    ],
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "active": "",
+            "default": "",
+            "empty": ""
+        },
+        "persistent-workspaces": {
+            "*": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        }
+    }
+}

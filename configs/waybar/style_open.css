@@ -1,0 +1,149 @@
+/* @import url("file:///home/lugo/.cache/hellwal/waybar-colors.css"); */
+
+@import "/home/lugo/.cache/hellwal/waybar-colors.css";
+
+@define-color principal @foreground;
+@define-color hover @cursor;
+
+* {
+    font-size: 10px;
+    font-family: "Inter Variable", "Symbols Nerd Font";
+    /* border: 1px solid #ffffff; */
+    /*background-color: @background;*/
+}
+
+window#waybar {
+    all: unset;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background: alpha(@background, 0.9);
+    /* box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6); */
+    /* border: solid 1px alpha(@principal, 0.8); */
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    padding: 1rem 0rem 1rem 0rem;
+    min-width: 2.5rem;
+    /* background-color: aqua; */
+}
+
+tooltip {
+    background: @background;
+    color: #f8f8f2;
+}
+
+#clock,
+#battery,
+#network,
+#cpu,
+#memory,
+#pulseaudio,
+#language,
+#tray,
+#custom-orbit {
+    border-radius: 0rem;
+    padding: 0.4rem;
+    /*background: alpha(@background, 0.5);*/
+    color: @principal;
+}
+
+#battery,
+#cpu,
+#memory,
+#pulseaudio {
+    font-size: 8px;
+    font-weight: bold;
+    color: @principal;
+}
+
+#network {
+    font-size: 15px;
+}
+
+#bluetooth {
+    font-size: 16px;
+}
+
+#language {
+    font-weight: bold;
+    font-size: 10px;
+}
+
+#clock {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+}
+
+#tray {
+    min-height: 1rem;
+}
+
+#clock:hover,
+#custom-pacman:hover,
+#custom-notification:hover,
+#bluetooth:hover,
+#network:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#network:hover,
+#custom-orbit:hover {
+    transition: all 0.3s ease;
+    color: @color2;
+}
+
+#workspaces {
+    border-radius: 0rem;
+    padding: 0rem;
+    color: @principal;
+}
+
+#workspaces button {
+    all: unset;
+
+    /* 1. EL TAMAÑO DE TU "DIV" */
+    min-width: 4px; /* Qué tan gruesa es la línea */
+    min-height: 10px; /* Qué tan larga es la línea */
+    padding: 0px;
+
+    /* 2. LA FORMA Y EL COLOR */
+    background-color: alpha(
+        @color1,
+        0.5
+    ); /* Color de fondo, no color de texto */
+    border-radius: 5px; /* Para que las puntas sean redondeadas (opcional) */
+    /* 3. EL ESPACIADO ENTRE ELLOS */
+
+    margin: 5px 15px;
+
+    transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.68); /* Animación suave */
+}
+
+/* Cuando estás en ese espacio de trabajo */
+#workspaces button.active {
+    background-color: @color1;
+    min-height: 40px; /* ¡Puedes hacer que se estire cuando está activo! */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); /* Sombra para resaltar */
+}
+
+/* Cuando el espacio está vacío */
+#workspaces button.empty {
+    background-color: alpha(#ffffff, 0.4);
+    min-height: 10px; /* Más cortito si está vacío */
+}
+
+/* Efecto al pasar el mouse */
+#workspaces button:hover {
+    background-color: @color3;
+    min-height: 35px;
+}
+
+#workspaces button.empty.active {
+    background-color: @color1;
+    min-height: 40px; /* ¡Puedes hacer que se estire cuando está activo! */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* Sombra para resaltar */
+}
