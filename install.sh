@@ -15,7 +15,7 @@ PACMAN_PACKAGES=(
     brightnessctl swaync waybar nautilus zsh hyprshot zoxide wl-clipboard
     xdg-desktop-portal-hyprland hyprpolkitagent nwg-look
     ntfs-3g exfat-utils dosfstools syncthing lsd
-    tesseract tesseract-data-eng xdg-utils foot
+    tesseract tesseract-data-eng xdg-utils foot waybar-lyric-git
 )
 
 AUR_PACKAGES=(
