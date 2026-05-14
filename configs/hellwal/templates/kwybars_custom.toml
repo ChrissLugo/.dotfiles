@@ -1,8 +1,0 @@
-name = "custom"
-
-red = "#%%color1.hex%%"
-green = "#%%color1.hex%%"
-yellow = "#%%color1.hex%%"
-blue = "#%%color1.hex%%"
-magenta = "#%%color1.hex%%"
-cyan = "#%%color1.hex%%"

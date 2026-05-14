@@ -20,9 +20,9 @@ PACMAN_PACKAGES=(
 
 AUR_PACKAGES=(
     hellwal python-pywalfox
-    clipse  ttf-nerd-fonts-symbols awww-git
-    quickshell-git tofi orbit-wifi fluent-icon-theme-git
-    kripton-theme-git quickshell-overview-git kwybars-git
+    ttf-nerd-fonts-symbols awww-git
+    quickshell-git tofi fluent-icon-theme-git
+    kripton-theme-git quickshell-overview-git kwybars-git vicinae-git 
 )
 
 install_pacman_packages() {
@@ -75,23 +75,16 @@ configs(){
     rm -rf "$HOME/.config/hellwal"
     ln -srv "$DOTFILES_DIR/configs/hellwal" "$HOME/.config/hellwal" #> /dev/null 2>&1
 
-    mkdir -p ~/.cache/hellwal/cache
-    mkdir -p ~/.cache/wal
-
-    ln -sf ~/.cache/hellwal/tofiConfig ~/.config/tofi/config
-    ln -sf ~/.cache/hellwal/gtk.css ~/.config/gtk-3.0/colors.css
-    ln -sf ~/.cache/hellwal/gtk.css ~/.config/gtk-4.0/colors.css
-    ln -sf ~/.cache/hellwal/clipse-theme.json ~/.config/clipse/custom_theme.json
-    ln -sf ~/.cache/hellwal/orbit-theme.toml ~/.config/orbit/theme.toml
-    ln -sf ~/.cache/hellwal/colors.json ~/.cache/wal/colors.json
-    ln -sf ~/.cache/hellwal/kwybars_custom.toml ~/.config/kwybars/themes/kwybars_custom.toml
-
-    ok "Listo"
-
     #Waybar
     log "Aplicando configuraciones de Waybar..."
     rm -rf "$HOME/.config/waybar"
     ln -srv "$DOTFILES_DIR/configs/waybar" "$HOME/.config/waybar" #> /dev/null 2>&1
+    ok "Listo"
+
+    #Matugen
+    log "Aplicando configuraciones de Matugen..."
+    rm -rf "$HOME/.config/matugen"
+    ln -srv "$DOTFILES_DIR/configs/matugen" "$HOME/.config/matugen" #> /dev/null 2>&1
     ok "Listo"
 
     log "Aplicando configuraciones de kwybars..."
@@ -135,15 +128,7 @@ configs(){
     ln -sv "$DOTFILES_DIR/configs/.zshrc" "$HOME/.zshrc" #> /dev/null 2>&1
 
     log "Configurando aplicaciones..."
-    # Inicia daemon si no está
-    # if ! pgrep -x swww-daemon >/dev/null; then
-    #     # awww-daemon &
-    #     # Espera a que el socket exista
-    #     while ! swww query >/dev/null 2>&1; do
-    #         sleep 0.1
-    #     done
-    # fi
-
+  
     #GTK
     sudo mkdir -p "$HOME/.config/gtk-3.0"
     sudo mkdir -p "$HOME/.config/gtk-4.0"

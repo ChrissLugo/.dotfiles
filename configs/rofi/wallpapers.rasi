@@ -1,4 +1,4 @@
-@import "~/.cache/hellwal/rofi.rasi"
+@import "./rofi_theme.rasi"
 
 configuration {
     show-icons:                     true;
@@ -8,12 +8,13 @@ configuration {
 }
 
 * {
+    /* Aquí llamamos a las variables de tu rofi_theme.rasi */
     bg-col:       @background;
-    border-col:   #89b4fa;
-    selected-col: #ffffff2c;
+    border-col:   @active-background;
+    selected-col: @selected-normal-background;
     font:         "JetBrains Mono 11";
     background-color: transparent;
-    text-color:   @text-col;
+    text-color:   @foreground;
 }
 
 window {
@@ -21,9 +22,9 @@ window {
     border-radius: 20px;
     padding:      0px;
 
-    location:         south;      
-    anchor:           south;      
-    y-offset:         -10px;      
+    location:         south;
+    anchor:           south;
+    y-offset:         -10px;
 }
 
 mainbox {
@@ -43,7 +44,7 @@ entry {
     background-color: @selected-col;
     border-radius: 8px;
     placeholder:  "Buscar fondo...";
-    placeholder-color: #6c7086;
+    placeholder-color: @alternate-normal-foreground;
 }
 
 listview {
@@ -65,8 +66,8 @@ element {
 }
 
 element selected {
-    background-color: @selected-col;
     border:           2px solid;
+    border-color:     @border-col;
 }
 
 element-icon {

@@ -1,7 +1,7 @@
 /* @import url("file:///home/lugo/.cache/hellwal/waybar-colors.css"); */
 
-@import "/home/lugo/.cache/hellwal/waybar-colors.css";
-
+/*@import "/home/lugo/.cache/hellwal/waybar-colors.css";*/
+@import "./colors.css";
 @define-color principal @foreground;
 @define-color hover @cursor;
 
@@ -16,7 +16,7 @@ window#waybar {
     all: unset;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
-    background: alpha(@background, 0.9);
+    background: alpha(@background, 1);
     /* box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6); */
     /* border: solid 1px alpha(@principal, 0.8); */
 }
@@ -46,7 +46,7 @@ tooltip {
     border-radius: 0rem;
     padding: 0.4rem;
     /*background: alpha(@background, 0.5);*/
-    color: @principal;
+    color: white;
 }
 
 #battery,
@@ -55,7 +55,7 @@ tooltip {
 #pulseaudio {
     font-size: 8px;
     font-weight: bold;
-    color: @principal;
+    color: white;
 }
 
 #network {
@@ -112,8 +112,8 @@ tooltip {
 
     /* 2. LA FORMA Y EL COLOR */
     background-color: alpha(
-        @color1,
-        0.5
+        @primary,
+        0.7
     ); /* Color de fondo, no color de texto */
     border-radius: 5px; /* Para que las puntas sean redondeadas (opcional) */
     /* 3. EL ESPACIADO ENTRE ELLOS */
@@ -125,7 +125,7 @@ tooltip {
 
 /* Cuando estás en ese espacio de trabajo */
 #workspaces button.active {
-    background-color: @color1;
+    background-color: @primary;
     min-height: 40px; /* ¡Puedes hacer que se estire cuando está activo! */
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); /* Sombra para resaltar */
 }
@@ -138,12 +138,22 @@ tooltip {
 
 /* Efecto al pasar el mouse */
 #workspaces button:hover {
-    background-color: @color3;
+    background-color: @primary;
     min-height: 35px;
 }
 
 #workspaces button.empty.active {
-    background-color: @color1;
+    background-color: @primary;
     min-height: 40px; /* ¡Puedes hacer que se estire cuando está activo! */
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* Sombra para resaltar */
+}
+
+#custom-screenrecorder.recording {
+    color: #ff3333;
+    font-size: 15px;
+}
+
+#custom-screenrecorder.stopped {
+    color: white;
+    font-size: 15px;
 }

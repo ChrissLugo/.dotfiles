@@ -1,16 +1,20 @@
-source ~/.cache/hellwal/variables.sh
-sh ~/.cache/hellwal/terminal.sh
+if [[ -f ~/.cache/matugen/variables.sh ]]; then
+    source ~/.cache/matugen/variables.sh
+fi
 
-fastfetch
-# pokemon-colorscripts -r --no-title
+if [[ -f ~/.cache/matugen/terminal.sh ]]; then
+    sh ~/.cache/matugen/terminal.sh
+fi
+
+#fastfetch
+pokemon-colorscripts -r --no-title
 # toilet -t -f mono12 -F metal "ZLinux"
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="nicoulaj"
-
+ZSH_THEME="amuse"
 
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
@@ -54,3 +58,25 @@ zstyle ':fzf-tab:complete:*:*' fzf-preview '
 '
 
 fpath=(~/.zsh/completions $fpath)
+
+# fnm
+FNM_PATH="/home/lugo/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "$(fnm env --shell zsh)"
+fi
+
+# fnm
+FNM_PATH="/home/lugo/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "$(fnm env --shell zsh)"
+fi
+
+# pnpm
+export PNPM_HOME="/home/lugo/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

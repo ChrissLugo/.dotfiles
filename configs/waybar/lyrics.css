@@ -1,0 +1,26 @@
+@import "./colors.css";
+
+window#waybar {
+    all: unset;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background: alpha(@background, 0);
+}
+
+.modules-center {
+    padding: 1rem 0rem 1rem 0rem;
+    min-width: 2.5rem;
+    background-color: alpha(@background, 0);
+    border-radius: 15px;
+}
+
+#custom-lyrics {
+    color: @primary;
+    margin: 0 5px;
+    padding: 0 10px;
+    font-size: 18px;
+}
+
+#custom-lyrics.paused {
+    color: alpha(@secundary, 1);
+}

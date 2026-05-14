@@ -1,0 +1,4 @@
+accent_primary = "{{colors.primary.default.hex}}"
+accent_secondary = "{{colors.secondary.default.hex}}"
+background = "{{colors.background.default.hex}}"
+foreground = "{{colors.on_background.default.hex}}"

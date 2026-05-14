@@ -1,0 +1,29 @@
+{
+    "layer": "bottom",
+    "exclusive": false,
+    "position": "bottom",
+    "margin": "0 0 100 0",
+    "reload_style_on_change": true,
+
+    "modules-center": [
+        "custom/lyrics"
+    ],
+
+    "custom/lyrics": {
+        "justify": "center",
+        "return-type": "json",
+        "format": "{icon} {0}",
+        "hide-empty-text": true,
+        "format-icons": {
+        "playing": " ",
+        "paused": " ",
+        "lyric": "",
+        "music": " ",
+        "no_lyric": " ",
+        "getting": " ",
+        },
+        "exec-if": "which waybar-lyric",
+        "exec": "waybar-lyric --quiet | jq --unbuffered -c 'if .tooltip then (.tooltip | split(\"\\n\")) as $l | ($l | map(contains(\"<b>\")) | index(true)) as $i | ($l | map(gsub(\"<[^>]*>\"; \"\"))) as $c | .text = ([ (if $i > 0 then $c[$i-1] else null end), (\"<b>\" + $c[$i] + \"</b>\"), $c[$i+1] ] | map(select(. != null)) | join(\"\\n<span font=\\\"6\\\"> </span>\\n\")) | .tooltip = \"\" else . end'",
+        "on-click": "waybar-lyric play-pause",
+    },
+}

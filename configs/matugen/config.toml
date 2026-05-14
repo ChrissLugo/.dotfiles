@@ -1,0 +1,68 @@
+[config]
+
+[config.wallpaper]
+set = false
+
+command = "awww img {{ image }} --transition-type wipe --transition-angle 240 --transition-step 90 --transition-fps 120 --transition-duration 1"
+
+[templates.gtk3]
+input_path = './templates/gtk-colors.css'
+output_path = '~/.config/gtk-3.0/colors.css'
+post_hook = 'sh -c "gsettings set org.gnome.desktop.interface gtk-theme \"\" && gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}" &'
+[templates.gtk4]
+input_path = './templates/gtk-colors.css'
+output_path = '~/.config/gtk-4.0/colors.css'
+post_hook = 'nautilus -q &'
+
+[templates.waybar]
+input_path = './templates/colors.css'
+output_path = '~/.config/waybar/colors.css'
+
+[templates.kwybars]
+input_path = './templates/kwybars_custom.toml'
+output_path = '~/.config/kwybars/themes/kwybars_custom.toml'
+
+[templates.rofi]
+input_path = './templates/rofi_theme.rasi'
+output_path = '~/.config/rofi/rofi_theme.rasi'
+
+[templates.firefox]
+input_path = './templates/colors.json'
+output_path = '~/.cache/wal/colors.json'
+post_hook = 'pywalfox update &'
+
+[templates.vicinae]
+input_path = './templates/vicinae.toml'
+output_path = '~/.local/share/vicinae/themes/matugen.toml'
+post_hook = 'vicinae theme set matugen'
+
+[templates.zed]
+input_path = './templates/zed-colors.json'
+output_path = '~/.config/zed/themes/matugen.json'
+
+[templates.variables]
+input_path = "~/.config/matugen/templates/variables.tera"
+output_path = "~/.cache/matugen/variables.sh"
+
+[templates.terminal]
+input_path = "~/.config/matugen/templates/terminal.tera"
+output_path = "~/.cache/matugen/terminal.sh"
+post_hook = "sh ~/.cache/matugen/terminal.sh"
+
+[templates.orbit]
+input_path = "./templates/orbit-theme.toml"
+output_path = "~/.config/orbit/theme.toml"
+post_hook = "orbit reload-theme"
+
+[templates.swayosd]
+input_path = './templates/colors.css'
+output_path = '~/.config/swayosd/colors.css'
+post_hook = "killall swayosd-server; hyprctl dispatch exec 'swayosd-server --top-margin 0.99'"
+
+# [templates.alacritty]
+# input_path = './templates/alacritty.toml'
+# output_path = '~/.config/alacritty/colors.toml'
+
+# [templates.tofi]
+# input_path = './templates/tofiConfig'
+# output_path = '~/.config/tofi/config'

@@ -1,0 +1,8 @@
+name = "custom"
+
+red = "{{colors.primary.default.hex}}"
+green = "{{colors.primary.default.hex}}"
+yellow = "{{colors.primary.default.hex}}"
+blue = "{{colors.primary.default.hex}}"
+magenta = "{{colors.primary.default.hex}}"
+cyan = "{{colors.primary.default.hex}}"

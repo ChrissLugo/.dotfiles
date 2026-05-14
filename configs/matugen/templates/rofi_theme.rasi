@@ -1,0 +1,28 @@
+* {
+    active-background: {{colors.primary.default.hex}};
+    active-foreground: {{colors.on_background.default.hex}};
+    normal-background: {{colors.background.default.hex}};
+    normal-foreground: {{colors.on_background.default.hex}};
+    urgent-background: {{colors.error.default.hex}};
+    urgent-foreground: {{colors.on_background.default.hex}};
+
+    alternate-active-background: {{colors.background.default.hex}};
+    alternate-active-foreground: {{colors.on_background.default.hex}};
+    alternate-normal-background: {{colors.background.default.hex}};
+    alternate-normal-foreground: {{colors.on_background.default.hex}};
+    alternate-urgent-background: {{colors.background.default.hex}};
+    alternate-urgent-foreground: {{colors.on_background.default.hex}};
+
+    selected-active-background: {{colors.error.default.hex}};
+    selected-active-foreground: {{colors.on_background.default.hex}};
+    selected-normal-background: {{colors.primary.default.hex}};
+    selected-normal-foreground: {{colors.on_background.default.hex}};
+    selected-urgent-background: {{colors.tertiary.default.hex}};
+    selected-urgent-foreground: {{colors.on_background.default.hex}};
+
+    background-color: {{colors.background.default.hex}};
+    background: {{colors.background.default.hex}};
+    foreground: {{colors.on_background.default.hex}};
+    border-color: @active-background;
+    spacing: 2;
+}
