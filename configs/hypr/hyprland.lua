@@ -102,7 +102,7 @@ hl.config({
         border_size = 0,
 
         col = {
-            active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
+            active_border   = "#83d2e4", --{ colors = {"#0e1416", "#83d2e4"}, angle = 45 },
             inactive_border = "rgba(595959aa)",
         },
 
@@ -125,9 +125,9 @@ hl.config({
 
         shadow = {
             enabled      = true,
-            range        = 4,
-            render_power = 3,
-            color        = 0xee1a1a1a,
+            range        = 20,
+            render_power = 5,
+            color        = "#000000",
         },
 
         blur = {
@@ -253,8 +253,17 @@ hl.gesture({
 
 hl.gesture({
     fingers = 3,
+    mods = "SUPER",
     direction = "swipe",
     action = "resize"
+})
+
+hl.gesture({
+  fingers = 2,
+  direction = "pinch",
+  action = "cursorZoom",
+  zoom_level = 1, 
+  mode = "live" 
 })
 
 -- Example per-device config
@@ -293,6 +302,8 @@ hl.bind(mainMod .. " + v", hl.dsp.exec_cmd(clipboard))
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("localsend"))
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("scrcpy --tcpip=192.168.1.140"))
 hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t"))
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("scrcpy -d"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
@@ -437,4 +448,58 @@ hl.window_rule ({
     center = true,
     size = {747, 420},
     opacity = "1 1"
+})
+
+hl.window_rule ({
+    name = "Picture-in-Picture",
+    match = {class = "firefox", title = "Picture-in-Picture"},
+    float = true,
+    center = true,
+    pin = true,
+    size = {407, 228},
+    opacity = "1 1",
+    keep_aspect_ratio = true
+})
+
+hl.window_rule ({
+    name = "Picture-in-Picture2",
+    match = {class = "", title = "Picture-in-Picture"},
+    float = true,
+    center = true,
+    pin = true,
+    size = {407, 228},
+    opacity = "1 1",
+    keep_aspect_ratio = true
+})
+
+hl.window_rule ({
+    name = "Packet",
+    match = {class = "io.github.nozwock.Packet"},
+    float = true,
+    pin = true,
+    animation = "slide bottom",
+    move = {"(monitor_w - window_w) - 9", "monitor_h - (window_h - 50)"},
+    size = {360, 540},
+    opacity = "1 1"
+})
+
+hl.window_rule ({
+  name = "Loupe",
+  match = {class = "org.gnome.Loupe"},
+  float = true,
+  animation = "popin",
+  size = {541,349},
+  opacity = "1 1"
+})
+
+hl.window_rule ({
+  name = "scrcpy",
+  match = {class = "scrcpy"},
+  animation = "slide",
+  float = true,
+  size = {300, 672},
+  opacity = "1 1",
+  move = {"(monitor_w - window_w) - 9", "(monitor_h / 2) - (window_h / 2)"},
+  pin = true,
+  keep_aspect_ratio = true
 })

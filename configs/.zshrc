@@ -7,8 +7,9 @@ if [[ -f ~/.cache/matugen/terminal.sh ]]; then
 fi
 
 #fastfetch
-pokemon-colorscripts -r --no-title
-# toilet -t -f mono12 -F metal "ZLinux"
+pokemon-colorscripts -r --no-title -s
+# pokeshell -a random < /dev/null
+toilet -t -f future -F metal "luguito"
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"

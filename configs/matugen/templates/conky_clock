@@ -1,0 +1,41 @@
+conky.config = {
+    alignment = 'top',
+    background = false,
+    border_width = 1,
+    cpu_avg_samples = 2,
+    default_color = 'white',
+    double_buffer = true,
+    font = 'JetBrains Mono:size=12',
+    gap_x = 0,
+    gap_y = 80,
+    net_avg_samples = 2,
+    no_buffers = true,
+    out_to_console = false,
+    out_to_ncurses = false,
+    out_to_stderr = false,
+    out_to_x = false,
+    out_to_wayland = true, -- Forzar renderizado en Wayland
+    
+    -- Configuración clave para Hyprland
+    own_window = true,
+    own_window_type = 'desktop', -- Lo fuerza a ir al fondo
+    own_window_transparent = true,
+    own_window_argb_visual = true,
+    own_window_argb_value = 0,
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+
+    -- === AQUÍ ESTÁ EL FIX ===
+    use_xft = true,         -- Activado para fuentes vectoriales limpias
+    draw_shades = false,    -- QUITA LA SOMBRA CHUECA
+    draw_outline = false,   -- Quita contornos
+    draw_borders = false,   -- Quita bordes de caja
+    -- =======================
+    
+    update_interval = 1.0,
+    use_xft = true,
+}
+
+conky.text = [[
+${font Inter:size=90:weight=Bold}${color {{colors.primary.default.hex_stripped}}}${time %H:%M}
+${voffset -120}${goto 190}${font Inter:size=22:weight=Regular}${color aaaaaa}${time %A, %-d %B}
+]]

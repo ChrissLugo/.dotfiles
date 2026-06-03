@@ -29,7 +29,7 @@ output_path = '~/.config/rofi/rofi_theme.rasi'
 [templates.firefox]
 input_path = './templates/colors.json'
 output_path = '~/.cache/wal/colors.json'
-post_hook = 'pywalfox update &'
+post_hook = 'sh -c "$HOME/.local/bin/pywalfox update"'
 
 [templates.vicinae]
 input_path = './templates/vicinae.toml'
@@ -58,6 +58,11 @@ post_hook = "orbit reload-theme"
 input_path = './templates/colors.css'
 output_path = '~/.config/swayosd/colors.css'
 post_hook = "killall swayosd-server; hyprctl dispatch exec 'swayosd-server --top-margin 0.99'"
+
+[templates.conky]
+input_path = './templates/conky_clock'
+output_path = '~/.config/conky/desktop_clock.conf'
+
 
 # [templates.alacritty]
 # input_path = './templates/alacritty.toml'
