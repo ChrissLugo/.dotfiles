@@ -15,14 +15,15 @@ PACMAN_PACKAGES=(
     brightnessctl swaync waybar nautilus zsh hyprshot zoxide wl-clipboard
     xdg-desktop-portal-hyprland hyprpolkitagent nwg-look
     ntfs-3g exfat-utils dosfstools syncthing lsd
-    tesseract tesseract-data-eng xdg-utils foot waybar-lyric-git
+    tesseract tesseract-data-eng xdg-utils foot
 )
 
 AUR_PACKAGES=(
     hellwal python-pywalfox
     ttf-nerd-fonts-symbols awww-git
     quickshell-git tofi fluent-icon-theme-git
-    kripton-theme-git quickshell-overview-git kwybars-git vicinae-git 
+    kripton-theme-git quickshell-overview-git kwybars-git vicinae-git waybar-lyric
+    matugen-bin
 )
 
 install_pacman_packages() {
@@ -134,12 +135,12 @@ configs(){
     sudo mkdir -p "$HOME/.config/gtk-4.0"
 
     echo "@import 'colors.css';" > "$HOME/.config/gtk-3.0/gtk.css"
-    echo "@import 'colors.css';" > "$HOME/.config/gtk-4.0/gtk.css"
+    #echo "@import 'colors.css';" > "$HOME/.config/gtk-4.0/gtk.css"
 
     # Aplica wallpaper
-    sudo chmod +x "$DOTFILES_DIR/configs/hellwal/changeWallpaper.sh"
-    sudo chmod +x "$DOTFILES_DIR/configs/rofi/selector.sh"
-    ./configs/hellwal/changeWallpaper.sh ./configs/wallpaper.jpg
+    #sudo chmod +x "$DOTFILES_DIR/configs/hellwal/changeWallpaper.sh"
+    #sudo chmod +x "$DOTFILES_DIR/configs/rofi/selector.sh"
+    #./configs/hellwal/changeWallpaper.sh ./configs/wallpaper.jpg
     ok "Listo"
 }
 
@@ -174,8 +175,8 @@ main() {
     #      sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
     # fi
 
-    # install_pacman_packages
-    # install_aur_packages
+    install_pacman_packages
+    install_aur_packages
     configs
 
     echo "
