@@ -1,146 +1,182 @@
 set -euo pipefail
 
 #Variables
-DOTFILES_DIR=$(pwd)
+DOTFILES_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
 #utilidades
-log() { printf '\e[1;34m[INFO] %s\e[0m %s\n' "$*"; }
-warn() { printf '\e[1;33m[WARN] %s\e[0m %s\n' "$*"; }
-err() { printf '\e[1;31m[ERROR] %s\e[0m %s\n' "$*"; }
-ok() { printf '\e[1;32m[OK] %s\e[0m\n' "$*";}
+log() { printf '\e[1;34m[INFO]\e[0m %s\n' "$*"; }
+warn() { printf '\e[1;33m[WARN]\e[0m %s\n' "$*"; }
+err() { printf '\e[1;31m[ERROR]\e[0m %s\n' "$*"; }
+ok() { printf '\e[1;32m[OK]\e[0m %s\n' "$*"; }
 
 #Listas
 PACMAN_PACKAGES=(
-    cava rofi-wayland hyprpicker nwg-displays
-    brightnessctl swaync waybar nautilus zsh hyprshot zoxide wl-clipboard
-    xdg-desktop-portal-hyprland hyprpolkitagent nwg-look
+    # Hyprland y piezas del compositor (imprescindibles en una PC en blanco)
+    hyprland hyprlock hypridle sddm polkit hyprpolkitagent
+    xdg-desktop-portal-hyprland
+    # Audio
+    pipewire pipewire-pulse pipewire-alsa wireplumber
+    # Red y bluetooth
+    networkmanager bluez bluez-utils
+    # Utilidades usadas en hyprland.lua / waybar / rofi
+    cava rofi-wayland hyprpicker nwg-displays hyprshutdown scrcpy
+    brightnessctl swaync swayosd waybar nautilus zsh hyprshot zoxide wl-clipboard
+    nwg-look pacman-contrib
     ntfs-3g exfat-utils dosfstools syncthing lsd
     tesseract tesseract-data-eng xdg-utils foot
 )
 
 AUR_PACKAGES=(
-    hellwal python-pywalfox
+    hellwal python-pywalfox localsend
     ttf-nerd-fonts-symbols awww-git
     quickshell-git tofi fluent-icon-theme-git
-    kripton-theme-git quickshell-overview-git kwybars-git vicinae-git waybar-lyric
+    kripton-theme-git quickshell-overview-git kwybars-bin vicinae-git waybar-lyric
     matugen-bin
 )
 
+# Rutas (relativas a configs/<componente>/) que Matugen regenera en cada
+# equipo a partir del wallpaper local. Nunca deben quedar simlinkeadas al
+# repo: si lo estuvieran, escribir ahí modificaría un archivo dentro de
+# ~/.dotfiles, que se sincroniza por Syncthing entre las PCs, y el cambio
+# de color de una máquina se propagaría a la otra.
+MATUGEN_GENERATED_FILES=(
+    "waybar/colors.css"
+    "rofi/rofi_theme.rasi"
+    "kwybars/themes/kwybars_custom.toml"
+)
+
+is_generated() {
+    local needle="$1" f
+    for f in "${MATUGEN_GENERATED_FILES[@]}"; do
+        [ "$needle" = "$f" ] && return 0
+    done
+    return 1
+}
+
+check_yay() {
+    if command -v yay >/dev/null 2>&1; then
+        log "yay ya está instalado"
+        return
+    fi
+
+    log "yay no encontrado, instalando..."
+    sudo pacman -S --needed --noconfirm git base-devel
+    local tmpdir
+    tmpdir=$(mktemp -d)
+    git clone https://aur.archlinux.org/yay.git "$tmpdir/yay"
+    (cd "$tmpdir/yay" && makepkg -si --noconfirm)
+    rm -rf "$tmpdir"
+    ok "yay instalado"
+}
+
 install_pacman_packages() {
     log "Sincronizando bases e instalando paquetes de pacman..."
-    sudo pacman -Sy --noconfirm #> /dev/null 2>&1
-    sudo pacman -S --needed "${PACMAN_PACKAGES[@]}" #> /dev/null 2>&1
+    sudo pacman -Sy --noconfirm
+    sudo pacman -S --needed --noconfirm "${PACMAN_PACKAGES[@]}"
     ok "Paquetes Pacman instalados exitosamente"
 }
 
 install_aur_packages() {
     log "Instalando paquetes AUR con yay..."
-    yay -S --needed "${AUR_PACKAGES[@]}" #> /dev/null 2>&1
+    yay -S --needed --noconfirm "${AUR_PACKAGES[@]}"
     ok "Paquetes AUR instalados exitosamente"
+}
 
+# Vincula únicamente los archivos individuales de configs/<component>,
+# nunca la carpeta completa, para que los archivos que Matugen regenera
+# (ver MATUGEN_GENERATED_FILES) queden fuera del repo y no se sincronicen
+# entre equipos. El directorio destino queda como carpeta real, no symlink.
+link_config() {
+    local component="$1"
+    local src="$DOTFILES_DIR/configs/$component"
+    local dest="$HOME/.config/$component"
+
+    if [ ! -d "$src" ]; then
+        warn "No existe $src, se omite"
+        return
+    fi
+
+    # Migra instalaciones previas donde la carpeta completa era un symlink
+    if [ -L "$dest" ]; then
+        rm -f "$dest"
+    fi
+    mkdir -p "$dest"
+
+    local file rel target linked=0 skipped=0
+    while IFS= read -r -d '' file; do
+        rel="${file#"$src"/}"
+
+        case "$rel" in
+            *.sync-conflict-*|*.bak.*)
+                continue
+                ;;
+        esac
+
+        if is_generated "$component/$rel"; then
+            skipped=$((skipped + 1))
+            continue
+        fi
+
+        target="$dest/$rel"
+        mkdir -p "$(dirname "$target")"
+        ln -sfr "$file" "$target"
+        linked=$((linked + 1))
+    done < <(find "$src" -type f -print0)
+
+    ok "$component: $linked archivo(s) vinculado(s), $skipped generado(s) por Matugen respetado(s)"
 }
 
 configs(){
-    #Hyprland
-    log "Aplicando configuraciones de Hyprland..."
-    rm -rf "$HOME/.config/hypr"
-    ln -srv "$DOTFILES_DIR/configs/hypr" "$HOME/.config/hypr" #> /dev/null 2>&1
+    #Red y Bluetooth
+    log "Habilitando NetworkManager y Bluetooth..."
+    sudo systemctl enable --now NetworkManager
+    sudo systemctl enable --now bluetooth
     ok "Listo"
 
-    #Clipse
-    log "Aplicando configuraciones de Clipse..."
-    rm -rf "$HOME/.config/clipse"
-    ln -srv "$DOTFILES_DIR/configs/clipse" "$HOME/.config/clipse" #> /dev/null 2>&1
+    #SDDM (login manager): se habilita para el próximo arranque, no se
+    #lanza ahora para no matar la sesión gráfica actual si ya hay una.
+    log "Habilitando SDDM..."
+    sudo systemctl enable sddm
     ok "Listo"
 
-    #Bluetooth
-    sudo systemctl start bluetooth
-    sudo systemctl enable bluetooth
-
-    #Iconos
-    log "Aplicando iconos..."
+    #Iconos y temas
+    log "Aplicando iconos y temas GTK..."
     gsettings set org.gnome.desktop.interface icon-theme "Fluent orange dark"
-    ok "Listo"
-
-    #Themes
     gsettings set org.gnome.desktop.interface gtk-theme Kripton
     gsettings set org.gnome.desktop.wm.preferences theme Kripton
     ok "Listo"
 
     #Cursor
-    hyprctl setcursor macOS 25 #> /dev/null 2>&1
-    hyprctl reload #> /dev/null 2>&1
+    hyprctl setcursor macOS 25 || true
+    hyprctl reload || true
 
-    #Hellwal
-    log "Aplicando configuraciones de Hellwal..."
-    rm -rf "$HOME/.config/hellwal"
-    ln -srv "$DOTFILES_DIR/configs/hellwal" "$HOME/.config/hellwal" #> /dev/null 2>&1
-
-    #Waybar
-    log "Aplicando configuraciones de Waybar..."
-    rm -rf "$HOME/.config/waybar"
-    ln -srv "$DOTFILES_DIR/configs/waybar" "$HOME/.config/waybar" #> /dev/null 2>&1
-    ok "Listo"
-
-    #Matugen
-    log "Aplicando configuraciones de Matugen..."
-    rm -rf "$HOME/.config/matugen"
-    ln -srv "$DOTFILES_DIR/configs/matugen" "$HOME/.config/matugen" #> /dev/null 2>&1
-    ok "Listo"
-
-    log "Aplicando configuraciones de kwybars..."
-    rm -rf "$HOME/.config/kwybars"
-    ln -srv "$DOTFILES_DIR/configs/kwybars" "$HOME/.config/kwybars" #> /dev/null 2>&1
-    ok "Listo"
-
-    #Rofi
-    log "Aplicando configuraciones de Rofi..."
-    rm -rf "$HOME/.config/rofi"
-    ln -srv "$DOTFILES_DIR/configs/rofi" "$HOME/.config/rofi" #> /dev/null 2>&1
-    ok "Listo"
-
-    #Tofi
-    log "Aplicando configuraciones de tofi..."
-    rm -rf "$HOME/.config/tofi"
-    ln -srv "$DOTFILES_DIR/configs/tofi" "$HOME/.config/tofi" #> /dev/null 2>&1
-    ok "Listo"
-
-    #Foot terminal
-    log "Aplicando configuraciones de Foot terminal..."
-    rm -rf "$HOME/.config/foot"
-    ln -srv "$DOTFILES_DIR/configs/foot" "$HOME/.config/foot" #> /dev/null 2>&1
-    ok "Listo"
+    #Config por-archivo (nunca por-carpeta) de cada componente
+    for component in hypr clipse hellwal waybar matugen kwybars rofi tofi foot; do
+        log "Aplicando configuración de $component..."
+        link_config "$component"
+    done
 
     # OH MY ZSH
-    log "instalando OMZSH"
     export RUNZSH=no CHSH=no ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
-    export RUNZSH=no CHSH=no ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
-    rm -rf "$HOME/.oh-my-zsh"
-    git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git "$HOME/.oh-my-zsh" #> /dev/null 2>&1
+    if [ ! -d "$HOME/.oh-my-zsh" ]; then
+        log "Instalando OMZSH"
+        git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git "$HOME/.oh-my-zsh"
+        ok "Listo"
+    else
+        log "OMZSH ya está instalado, se omite"
+    fi
+
+    log "Instalando plugins de OMZSH"
+    [ -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ] || git clone https://github.com/zsh-users/zsh-autosuggestions.git "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
+    [ -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ] || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
     ok "Listo"
 
-    # plugins
-    log "instalando plugins de OMZSH"
-    git clone https://github.com/zsh-users/zsh-autosuggestions.git "$ZSH_CUSTOM/plugins/zsh-autosuggestions" #> /dev/null 2>&1
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" #> /dev/null 2>&1
-    ok "Listo"
+    ln -sfr "$DOTFILES_DIR/configs/.zshrc" "$HOME/.zshrc"
 
-    rm -f "$HOME/.zshrc"
-    ln -sv "$DOTFILES_DIR/configs/.zshrc" "$HOME/.zshrc" #> /dev/null 2>&1
-
-    log "Configurando aplicaciones..."
-  
     #GTK
-    sudo mkdir -p "$HOME/.config/gtk-3.0"
-    sudo mkdir -p "$HOME/.config/gtk-4.0"
-
+    log "Configurando GTK..."
+    mkdir -p "$HOME/.config/gtk-3.0" "$HOME/.config/gtk-4.0"
     echo "@import 'colors.css';" > "$HOME/.config/gtk-3.0/gtk.css"
-    #echo "@import 'colors.css';" > "$HOME/.config/gtk-4.0/gtk.css"
-
-    # Aplica wallpaper
-    #sudo chmod +x "$DOTFILES_DIR/configs/hellwal/changeWallpaper.sh"
-    #sudo chmod +x "$DOTFILES_DIR/configs/rofi/selector.sh"
-    #./configs/hellwal/changeWallpaper.sh ./configs/wallpaper.jpg
     ok "Listo"
 }
 
@@ -165,15 +201,10 @@ main() {
 
     printTitle
     log "Actualizando sistema antes de comenzar"
-    sudo pacman -Syyu
+    sudo pacman -Syyu --noconfirm
     ok "Listo"
 
-    # log "Detectando yay"
-
-    # if command -v yay >/dev/null 2>&1; then
-    #      log "Instalando yay"
-    #      sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
-    # fi
+    check_yay
 
     install_pacman_packages
     install_aur_packages
@@ -185,6 +216,10 @@ main() {
     ▐ ▙▌▙▌▙▌  ▐▖▌▄▌▐▖▙▌
 
     "
+
+    warn "Este script NO instala drivers de GPU (nvidia/amdgpu/intel):"
+    warn "  instálalos a mano según tu hardware antes de reiniciar."
+    warn "SDDM quedó habilitado pero no se inició: reinicia para entrar a Hyprland."
 }
 
 main "$@"

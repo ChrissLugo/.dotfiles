@@ -1,1 +1,11 @@
 .stfolder
+
+# Basura de conflictos de Syncthing
+*.sync-conflict-*
+*.bak.*
+
+# Archivos que Matugen regenera por-máquina; no deben trackearse ni
+# sincronizarse entre equipos (ver install.sh: MATUGEN_GENERATED_FILES)
+configs/waybar/colors.css
+configs/rofi/rofi_theme.rasi
+configs/kwybars/themes/kwybars_custom.toml

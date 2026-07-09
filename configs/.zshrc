@@ -15,7 +15,7 @@ toilet -t -f future -F metal "luguito"
 export ZSH="$HOME/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="amuse"
+ZSH_THEME="awesomepanda"
 
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
@@ -38,6 +38,7 @@ alias code='codium'
 alias dots='zeditor ~/.dotfiles'
 alias zed='zeditor'
 alias tesis='zed ~/Projects/Detection-Metabolic-Syndrome & zed ~/Projects/Detection-Metabolic-Syndrome-API & disown'
+alias win='sudo efibootmgr -n 0000 && systemctl reboot'
 
 #hacer ls al cambiar de directorio
 # Corrected
@@ -81,3 +82,18 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# fnm
+FNM_PATH="/home/luguito/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "$(fnm env --shell zsh)"
+fi
+
+# fnm
+FNM_PATH="/home/luguito/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "$(fnm env --shell zsh)"
+fi
+export PATH="$HOME/.local/bin:$PATH"

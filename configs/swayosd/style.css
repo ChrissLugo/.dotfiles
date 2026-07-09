@@ -1,0 +1,53 @@
+@import "./colors.css";
+
+window#osd {
+    border-radius: 10px;
+    border: 1px solid alpha(@primary, 0.2);
+    background: alpha(@background, 1);
+}
+
+window#osd #container {
+    margin: 16px;
+}
+
+window#osd image,
+window#osd label {
+    color: @primary;
+}
+
+window#osd progressbar:disabled,
+window#osd image:disabled {
+    opacity: 0.5;
+}
+
+window#osd progressbar,
+window#osd segmentedprogress {
+    min-height: 6px;
+    border-radius: 10px;
+    background: transparent;
+    border: none;
+}
+
+window#osd trough,
+window#osd segment {
+    min-height: inherit;
+    border-radius: inherit;
+    border: none;
+    background: alpha(@primary, 0.5);
+}
+
+window#osd progress,
+window#osd segment.active {
+    min-height: inherit;
+    border-radius: inherit;
+    border: none;
+    background: @primary;
+}
+
+window#osd segment {
+    margin-left: 8px;
+}
+
+window#osd segment:first-child {
+    margin-left: 0;
+}
