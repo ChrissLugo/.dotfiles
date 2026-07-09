@@ -58,7 +58,6 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hypridle")
 end)
 
-
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
 -------------------------------
@@ -141,6 +140,33 @@ hl.config({
 
     animations = {
         enabled = true,
+    },
+
+    plugin = {
+
+        hyprexpo = {
+            columns = 3,
+            gaps_in = 5,
+            gaps_out = 0,
+            bg_col = "rgb(111111)",
+            workspace_method = "first 1",
+            gesture_distance = 300,
+            cancel_key = "escape",
+            show_cursor = 1,
+        },
+
+        dynamic_cursors = {
+            enabled = true,
+            mode = "tilt",
+            threshold = 2,
+
+            tilt = {
+                limit = 5000,
+                activation = "negative_quadratic",
+                window = 100,
+                full = 60,
+            },
+        }
     },
 })
 
@@ -298,7 +324,8 @@ hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region -o ~/Pict
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("~/.config/waybar/toggle.sh"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pin({ action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("~/.config/rofi/selector.sh"))
-hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("qs ipc -c overview call overview toggle"))
+-- hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("qs ipc -c overview call overview toggle"))
+hl.bind(mainMod .. " + TAB", function() hl.plugin.hyprexpo.expo("toggle") end)
 hl.bind(mainMod .. " + v", hl.dsp.exec_cmd(clipboard))
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("localsend"))
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("scrcpy --tcpip=192.168.1.140"))

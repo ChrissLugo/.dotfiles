@@ -3,7 +3,7 @@ set -euo pipefail
 #Variables
 DOTFILES_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
-#utilidades
+#Utilidades
 log() { printf '\e[1;34m[INFO]\e[0m %s\n' "$*"; }
 warn() { printf '\e[1;33m[WARN]\e[0m %s\n' "$*"; }
 err() { printf '\e[1;31m[ERROR]\e[0m %s\n' "$*"; }
@@ -24,14 +24,11 @@ PACMAN_PACKAGES=(
     nwg-look pacman-contrib
     ntfs-3g exfat-utils dosfstools syncthing lsd
     tesseract tesseract-data-eng xdg-utils foot
+    awww matugen 
 )
 
 AUR_PACKAGES=(
-    hellwal python-pywalfox localsend
-    ttf-nerd-fonts-symbols awww-git
-    quickshell-git tofi fluent-icon-theme-git
-    kripton-theme-git quickshell-overview-git kwybars-bin vicinae-git waybar-lyric
-    matugen-bin
+    python-pywalfox kwybars-bin vicinae-bin
 )
 
 # Rutas (relativas a configs/<componente>/) que Matugen regenera en cada
@@ -133,28 +130,26 @@ configs(){
     sudo systemctl enable --now bluetooth
     ok "Listo"
 
-    #SDDM (login manager): se habilita para el próximo arranque, no se
-    #lanza ahora para no matar la sesión gráfica actual si ya hay una.
-    log "Habilitando SDDM..."
-    sudo systemctl enable sddm
-    ok "Listo"
-
-    #Iconos y temas
-    log "Aplicando iconos y temas GTK..."
-    gsettings set org.gnome.desktop.interface icon-theme "Fluent orange dark"
-    gsettings set org.gnome.desktop.interface gtk-theme Kripton
-    gsettings set org.gnome.desktop.wm.preferences theme Kripton
-    ok "Listo"
-
     #Cursor
     hyprctl setcursor macOS 25 || true
     hyprctl reload || true
 
     #Config por-archivo (nunca por-carpeta) de cada componente
-    for component in hypr clipse hellwal waybar matugen kwybars rofi tofi foot; do
+    for component in hypr waybar matugen kwybars rofi foot swayosd; do
         log "Aplicando configuración de $component..."
         link_config "$component"
     done
+
+    # Intalacion de plugins
+    hyprpm update
+
+    hyprpm add https://github.com/sandwichfarm/hyprexpo
+    hyprpm enable hyprexpo
+
+    hyprpm add https://github.com/virtcode/hypr-dynamic-cursors
+    hyprpm enable dynamic-cursors
+
+    hyprpm reload
 
     # OH MY ZSH
     export RUNZSH=no CHSH=no ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
@@ -182,18 +177,19 @@ configs(){
 
 printTitle(){
    printf '\e[1;32m%s\e[0m\n' "
-    __________.____
-    \____    /|    |    __ __  ____   ____
-      /     / |    |   |  |  \/ ___\ /  _ \
-     /     /_ |    |___|  |  / /_/  >  <_> )
-    /_______ \|_______ \____/\___  / \____/
-            \/        \/    /_____/
+    .__                     .__  __          
+    |  |  __ __  ____  __ __|__|/  |_  ____  
+    |  | |  |  \/ ___\|  |  \  \   __\/  _ \ 
+    |  |_|  |  / /_/  >  |  /  ||  | (  <_> )
+    |____/____/\___  /|____/|__||__|  \____/ 
+            /_____/                        
         .___      __    _____.__.__
       __| _/_____/  |__/ ____\__|  |   ____   ______
      / __ |/  _ \   __\   __\|  |  | _/ __ \ /  ___/
     / /_/ (  <_> )  |  |  |  |  |  |_\  ___/ \___ \
     \____ |\____/|__|  |__|  |__|____/\___  >____  >
          \/                               \/     \/
+
     "
 }
 
@@ -216,10 +212,6 @@ main() {
     ▐ ▙▌▙▌▙▌  ▐▖▌▄▌▐▖▙▌
 
     "
-
-    warn "Este script NO instala drivers de GPU (nvidia/amdgpu/intel):"
-    warn "  instálalos a mano según tu hardware antes de reiniciar."
-    warn "SDDM quedó habilitado pero no se inició: reinicia para entrar a Hyprland."
 }
 
 main "$@"
