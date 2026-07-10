@@ -8,6 +8,7 @@ command = "awww img {{ image }} --transition-type wipe --transition-angle 240 --
 [templates.waybar]
 input_path = './templates/colors.css'
 output_path = '~/.config/waybar/colors.css'
+post_hook = 'pkill -SIGUSR2 waybar 2>/dev/null || true'
 
 [templates.gtk3]
 input_path = './templates/gtk-colors.css'

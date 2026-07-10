@@ -24,7 +24,7 @@ PACMAN_PACKAGES=(
     nwg-look pacman-contrib
     ntfs-3g exfat-utils dosfstools syncthing lsd
     tesseract tesseract-data-eng xdg-utils foot
-    awww matugen
+    awww matugen gnome-disk-utility udisks2 e2fsprogs cryptsetup exfatprogs
     # Dependencias de compilación para hyprpm (plugins de hyprland)
     cpio cmake meson gcc
     # Terminal SSH: banner + arte + fuzzy finder
@@ -32,7 +32,7 @@ PACMAN_PACKAGES=(
 )
 
 AUR_PACKAGES=(
-    python-pywalfox kwybars-bin vicinae-bin
+    python-pywalfox kwybars-bin vicinae-bin fluent-icon-theme-git
 )
 
 # Rutas (relativas a configs/<componente>/) que Matugen regenera en cada
@@ -207,6 +207,8 @@ configs(){
     log "Configurando GTK..."
     mkdir -p "$HOME/.config/gtk-3.0" "$HOME/.config/gtk-4.0"
     echo "@import 'colors.css';" > "$HOME/.config/gtk-3.0/gtk.css"
+    echo "@import 'colors.css';" > "$HOME/.config/gtk-4.0/gtk.css"
+    gsettings set org.gnome.desktop.interface icon-theme 'Fluent-orange-dark'
     ok "Listo"
 
     #Wallpapers y esquema de color (matugen)
