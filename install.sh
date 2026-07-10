@@ -193,6 +193,7 @@ configs(){
     log "Instalando plugins de OMZSH"
     [ -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ] || git clone https://github.com/zsh-users/zsh-autosuggestions.git "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
     [ -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ] || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
+    [ -d "$HOME/.zsh/fzf-tab" ] || git clone https://github.com/Aloxaf/fzf-tab.git "$HOME/.zsh/fzf-tab"
     ok "Listo"
 
     ln -sfr "$DOTFILES_DIR/configs/.zshrc" "$HOME/.zshrc"
