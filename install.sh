@@ -44,6 +44,7 @@ MATUGEN_GENERATED_FILES=(
     "waybar/colors.css"
     "rofi/rofi_theme.rasi"
     "kwybars/themes/kwybars_custom.toml"
+    "swayosd/colors.css"
 )
 
 is_generated() {

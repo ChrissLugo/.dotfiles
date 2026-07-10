@@ -9,3 +9,4 @@
 configs/waybar/colors.css
 configs/rofi/rofi_theme.rasi
 configs/kwybars/themes/kwybars_custom.toml
+configs/swayosd/colors.css
