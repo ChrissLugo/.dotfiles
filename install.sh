@@ -167,7 +167,7 @@ configs(){
     hyprctl setcursor Bibata-Modern-Ice 25 || true
     hyprctl reload || true
 
-    #Config por-archivo (nunca por-carpeta) de cada componente
+    #Config por-archivo (nunca por-carpeta) de cada compone 
     for component in hypr waybar matugen kwybars rofi foot swayosd; do
         log "Aplicando configuración de $component..."
         link_config "$component"
