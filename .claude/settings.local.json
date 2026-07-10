@@ -18,7 +18,12 @@
       "Bash(sudo pacman -S --noconfirm awww matugen pear-desktop zotero)",
       "WebFetch(domain:wiki.hyprland.org)",
       "WebSearch",
-      "WebFetch(domain:wiki.hypr.land)"
+      "WebFetch(domain:wiki.hypr.land)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Read(//home/luguito/Pictures/**)",
+      "Read(//home/luguito/Pictures/Wallpapers/**)"
     ]
   }
 }
