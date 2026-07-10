@@ -54,6 +54,25 @@ is_generated() {
     return 1
 }
 
+ensure_hyprpm_plugin() {
+    local url="$1" name="$2" state
+
+    state=$(hyprpm list | sed -r 's/\x1b\[[0-9;]*[a-zA-Z]//g')
+
+    if grep -q "Repository $name" <<< "$state"; then
+        log "hyprpm: $name ya está agregado"
+    else
+        hyprpm add "$url"
+        state=$(hyprpm list | sed -r 's/\x1b\[[0-9;]*[a-zA-Z]//g')
+    fi
+
+    if grep -A2 "Repository $name" <<< "$state" | grep -q "enabled: true"; then
+        log "hyprpm: $name ya está habilitado"
+    else
+        hyprpm enable "$name"
+    fi
+}
+
 set_permissions() {
     log "Dando permisos de ejecución a los scripts..."
     local file
@@ -153,14 +172,11 @@ configs(){
         link_config "$component"
     done
 
-    # Intalacion de plugins
+    # Intalacion de plugins (idempotente: hyprpm falla si el repo ya está agregado)
     hyprpm update
 
-    hyprpm add https://github.com/sandwichfarm/hyprexpo
-    hyprpm enable hyprexpo
-
-    hyprpm add https://github.com/virtcode/hypr-dynamic-cursors
-    hyprpm enable dynamic-cursors
+    ensure_hyprpm_plugin "https://github.com/sandwichfarm/hyprexpo" "hyprexpo"
+    ensure_hyprpm_plugin "https://github.com/virtcode/hypr-dynamic-cursors" "dynamic-cursors"
 
     hyprpm reload
 
