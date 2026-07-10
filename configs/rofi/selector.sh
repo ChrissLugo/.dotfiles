@@ -19,8 +19,5 @@ SELECCION=$(
 )
 
 if [ -n "$SELECCION" ]; then
-    # magick "$WALL_DIR/$SELECCION" "/home/lugo/.cache/current_wallpaper.png"
-    #awww img "$WALL_DIR/$SELECCION" --transition-type wipe --transition-angle 240 --transition-step 90 --transition-fps 120 --transition-duration 1.5 
     matugen image "$WALL_DIR/$SELECCION" -m dark --verbose  --source-color-index 0
-    #wait
 fi

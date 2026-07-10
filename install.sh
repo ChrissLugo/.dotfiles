@@ -24,7 +24,11 @@ PACMAN_PACKAGES=(
     nwg-look pacman-contrib
     ntfs-3g exfat-utils dosfstools syncthing lsd
     tesseract tesseract-data-eng xdg-utils foot
-    awww matugen 
+    awww matugen
+    # Dependencias de compilación para hyprpm (plugins de hyprland)
+    cpio cmake meson gcc
+    # Terminal SSH: banner + arte + fuzzy finder
+    pokemon-colorscripts-git toilet fzf
 )
 
 AUR_PACKAGES=(
@@ -48,6 +52,15 @@ is_generated() {
         [ "$needle" = "$f" ] && return 0
     done
     return 1
+}
+
+set_permissions() {
+    log "Dando permisos de ejecución a los scripts..."
+    local file
+    while IFS= read -r -d '' file; do
+        chmod +x "$file"
+    done < <(find "$DOTFILES_DIR" -type f \( -name "*.sh" -o -name "screenrecorder" \) -not -path "*/matugen/templates/*" -print0)
+    ok "Permisos aplicados"
 }
 
 check_yay() {
@@ -131,7 +144,7 @@ configs(){
     ok "Listo"
 
     #Cursor
-    hyprctl setcursor macOS 25 || true
+    hyprctl setcursor Bibata-Modern-Ice 25 || true
     hyprctl reload || true
 
     #Config por-archivo (nunca por-carpeta) de cada componente
@@ -168,10 +181,42 @@ configs(){
 
     ln -sfr "$DOTFILES_DIR/configs/.zshrc" "$HOME/.zshrc"
 
+    #Shell por defecto
+    log "Configurando zsh como shell predeterminada..."
+    sudo chsh -s "$(command -v zsh)" "$USER"
+    ok "Listo"
+
     #GTK
     log "Configurando GTK..."
     mkdir -p "$HOME/.config/gtk-3.0" "$HOME/.config/gtk-4.0"
     echo "@import 'colors.css';" > "$HOME/.config/gtk-3.0/gtk.css"
+    ok "Listo"
+
+    #Wallpaper inicial y esquema de color (matugen)
+    log "Copiando wallpaper por defecto y generando esquema de color..."
+    local wall_dir="$HOME/Pictures/Wallpapers"
+    mkdir -p "$wall_dir"
+    cp -f "$DOTFILES_DIR/configs/wallpaper.jpg" "$wall_dir/wallpaper.jpg"
+    matugen image "$wall_dir/wallpaper.jpg" -m dark --verbose --source-color-index 0
+    ok "Listo"
+
+    #Fuentes vendorizadas en configs/fonts (Nerd Font Symbols, Cascadia Code)
+    log "Instalando fuentes..."
+    local font_dir font_src font_dest
+    for font_dir in "$DOTFILES_DIR"/configs/fonts/*/; do
+        font_src="${font_dir%/}"
+        font_dest="$HOME/.local/share/fonts/$(basename "$font_src")"
+        mkdir -p "$font_dest"
+        cp -f "$font_src"/*.ttf "$font_dest/"
+    done
+    fc-cache -f "$HOME/.local/share/fonts" >/dev/null
+    ok "Listo"
+
+    #Tema de cursor Bibata (hyprcursor, vectorial en SVG, no se pixela al agrandar)
+    log "Instalando tema de cursor Bibata-Modern-Ice..."
+    local cursor_dest="$HOME/.local/share/icons/Bibata-Modern-Ice"
+    mkdir -p "$cursor_dest"
+    cp -rf "$DOTFILES_DIR/configs/cursors/Bibata-Modern-Ice/." "$cursor_dest/"
     ok "Listo"
 }
 
@@ -198,6 +243,8 @@ main() {
     log "Actualizando sistema antes de comenzar"
     sudo pacman -Syyu --noconfirm
     ok "Listo"
+
+    set_permissions
 
     check_yay
 
