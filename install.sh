@@ -209,12 +209,14 @@ configs(){
     echo "@import 'colors.css';" > "$HOME/.config/gtk-3.0/gtk.css"
     ok "Listo"
 
-    #Wallpaper inicial y esquema de color (matugen)
-    log "Copiando wallpaper por defecto y generando esquema de color..."
+    #Wallpapers y esquema de color (matugen)
+    log "Copiando wallpapers y generando esquema de color..."
     local wall_dir="$HOME/Pictures/Wallpapers"
     mkdir -p "$wall_dir"
-    cp -f "$DOTFILES_DIR/configs/wallpaper.jpg" "$wall_dir/wallpaper.jpg"
-    matugen image "$wall_dir/wallpaper.jpg" -m dark --verbose --source-color-index 0
+    local dotfiles_wallpapers=("$DOTFILES_DIR"/configs/Wallpapers/*.jpg)
+    cp -f "${dotfiles_wallpapers[@]}" "$wall_dir/"
+    local random_wallpaper="$wall_dir/$(basename "${dotfiles_wallpapers[RANDOM % ${#dotfiles_wallpapers[@]}]}")"
+    matugen image "$random_wallpaper" -m dark --verbose --source-color-index 0
     ok "Listo"
 
     #Fuentes vendorizadas en configs/fonts (Nerd Font Symbols, Cascadia Code)
@@ -245,12 +247,12 @@ printTitle(){
     |  |_|  |  / /_/  >  |  /  ||  | (  <_> )
     |____/____/\___  /|____/|__||__|  \____/ 
             /_____/                        
-        .___      __    _____.__.__
+        .___      __    _____.__.__                 
       __| _/_____/  |__/ ____\__|  |   ____   ______
      / __ |/  _ \   __\   __\|  |  | _/ __ \ /  ___/
-    / /_/ (  <_> )  |  |  |  |  |  |_\  ___/ \___ \
+    / /_/ (  <_> )  |  |  |  |  |  |_\  ___/ \___ \ 
     \____ |\____/|__|  |__|  |__|____/\___  >____  >
-         \/                               \/     \/
+        \/                               \/     \/ 
     "
 }
 
