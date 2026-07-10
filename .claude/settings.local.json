@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sudo -n chown luguito:luguito /home/luguito/.dotfiles/configs/kwybars/themes/kwybars_custom.toml /home/luguito/.dotfiles/configs/kwybars/themes)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(python3 -)",
+      "Bash(yay -Si swayosd)",
+      "Bash(yay -Si localsend)",
+      "Bash(yay -Ss hyprshutdown)",
+      "Bash(pacman -Qs sddm greetd lightdm)",
+      "Bash(systemctl list-unit-files *)",
+      "Bash(pacman -Qi sddm)",
+      "Bash(yay -Ss localsend)",
+      "Read(//etc/**)",
+      "Bash(bash -n /home/luguito/.dotfiles/install.sh)",
+      "Bash(pacman *)",
+      "Bash(sudo pacman -R --noconfirm awww-git matugen-bin pear-desktop-bin zotero-bin)",
+      "Bash(sudo pacman -S --noconfirm awww matugen pear-desktop zotero)",
+      "WebFetch(domain:wiki.hyprland.org)",
+      "WebSearch",
+      "WebFetch(domain:wiki.hypr.land)"
+    ]
+  }
+}

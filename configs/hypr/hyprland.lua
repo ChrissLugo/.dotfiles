@@ -56,6 +56,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("vicinae server")
     hl.exec_cmd("swayosd-server --top-margin 0.99")
     hl.exec_cmd("hypridle")
+    hl.exec_cmd("hyprpm reload -n")
 end)
 
 -------------------------------
