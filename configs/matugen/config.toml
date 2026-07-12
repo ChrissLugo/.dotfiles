@@ -57,3 +57,6 @@ input_path = "./templates/colors.css"
 output_path = "~/.config/swaync/colors.css"
 post_hook = "swaync-client -rs"
 
+[templates.fuzzel]
+input_path = "./templates/fuzzel.ini"
+output_path = "~/.config/fuzzel/fuzzel.css"

@@ -1,0 +1,14 @@
+[Icon Theme]
+Name=Fluent orange dark
+Comment=Solo los iconos de carpetas (places) en naranja, extraidos de fluent-icon-theme-git
+Inherits=hicolor
+Example=folder
+
+Directories=scalable/places
+
+[scalable/places]
+Context=Places
+Size=64
+MinSize=22
+MaxSize=512
+Type=Scalable

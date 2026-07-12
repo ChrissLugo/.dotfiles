@@ -22,17 +22,20 @@ PACMAN_PACKAGES=(
     cava rofi-wayland hyprpicker nwg-displays hyprshutdown scrcpy
     brightnessctl swaync swayosd waybar nautilus zsh hyprshot zoxide wl-clipboard
     nwg-look pacman-contrib
-    ntfs-3g exfat-utils dosfstools syncthing lsd
+    ntfs-3g dosfstools syncthing lsd
     tesseract tesseract-data-eng xdg-utils foot
     awww matugen gnome-disk-utility udisks2 e2fsprogs cryptsetup exfatprogs
     # Dependencias de compilación para hyprpm (plugins de hyprland)
     cpio cmake meson gcc
     # Terminal SSH: banner + arte + fuzzy finder
-    pokemon-colorscripts-git toilet fzf
+    pokemon-colorscripts-git toilet fzf ly
 )
 
 AUR_PACKAGES=(
-    python-pywalfox kwybars-bin vicinae-bin fluent-icon-theme-git
+    vicinae-bin doom-fire
+
+    # Apps para programar
+    codium postman-bin jetbrains-toolbox
 )
 
 # Rutas (relativas a configs/<componente>/) que Matugen regenera en cada
@@ -167,6 +170,13 @@ configs(){
     hyprctl setcursor Bibata-Modern-Ice 25 || true
     hyprctl reload || true
 
+    #ly
+    log "Configurando ly"
+    sudo ln -sfr "$DOTFILES_DIR/configs/ly/config.ini" "/etc/ly/config.ini"
+    sudo systemctl enable ly@tty1.service
+    sudo systemctl disable getty@tty1.service
+    ok "Listo"
+
     #Config por-archivo (nunca por-carpeta) de cada compone 
     for component in hypr waybar matugen kwybars rofi foot swayosd; do
         log "Aplicando configuración de $component..."
@@ -239,6 +249,14 @@ configs(){
     local cursor_dest="$HOME/.local/share/icons/Bibata-Modern-Ice"
     mkdir -p "$cursor_dest"
     cp -rf "$DOTFILES_DIR/configs/cursors/Bibata-Modern-Ice/." "$cursor_dest/"
+    ok "Listo"
+
+    #Tema de iconos Fluent-orange-dark (solo los iconos de carpetas/places,
+    #vendorizados en configs/icons para no depender del paquete AUR fluent-icon-theme-git)
+    log "Instalando tema de iconos Fluent-orange-dark..."
+    local icons_dest="$HOME/.local/share/icons/Fluent-orange-dark"
+    mkdir -p "$icons_dest"
+    cp -rf "$DOTFILES_DIR/configs/icons/Fluent-orange-dark/." "$icons_dest/"
     ok "Listo"
 }
 

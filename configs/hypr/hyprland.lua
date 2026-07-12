@@ -326,7 +326,6 @@ hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region -o ~/Pict
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("~/.config/waybar/toggle.sh"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pin({ action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("~/.config/rofi/selector.sh"))
--- hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("qs ipc -c overview call overview toggle"))
 hl.bind(mainMod .. " + TAB", function() hl.plugin.hyprexpo.expo("toggle") end)
 hl.bind(mainMod .. " + v", hl.dsp.exec_cmd(clipboard))
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("localsend"))
