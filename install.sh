@@ -99,6 +99,16 @@ check_yay() {
     ok "yay instalado"
 }
 
+install_fluent_icons() {
+    log "Instalando tema de iconos Fluent (variante orange)..."
+    local tmpdir
+    tmpdir=$(mktemp -d)
+    git clone --depth=1 https://github.com/vinceliuice/Fluent-icon-theme.git "$tmpdir/Fluent-icon-theme"
+    (cd "$tmpdir/Fluent-icon-theme" && ./install.sh -d "$HOME/.local/share/icons" orange)
+    rm -rf "$tmpdir"
+    ok "Listo"
+}
+
 install_pacman_packages() {
     log "Sincronizando bases e instalando paquetes de pacman..."
     sudo pacman -Sy --noconfirm
@@ -248,13 +258,10 @@ configs(){
     cp -rf "$DOTFILES_DIR/configs/cursors/Bibata-Modern-Ice/." "$cursor_dest/"
     ok "Listo"
 
-    #Tema de iconos Fluent-orange-dark (solo los iconos de carpetas/places,
-    #vendorizados en configs/icons para no depender del paquete AUR fluent-icon-theme-git)
-    log "Instalando tema de iconos Fluent-orange-dark..."
-    local icons_dest="$HOME/.local/share/icons/Fluent-orange-dark"
-    mkdir -p "$icons_dest"
-    cp -rf "$DOTFILES_DIR/configs/icons/Fluent-orange-dark/." "$icons_dest/"
-    ok "Listo"
+    #Tema de iconos Fluent, variante orange (cobertura completa: apps,
+    #mimetypes, devices, etc., no solo carpetas). Se instala clonando el
+    #repo upstream a un directorio temporal y corriendo su install.sh oficial.
+    install_fluent_icons
 }
 
 printTitle(){
