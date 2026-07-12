@@ -32,7 +32,7 @@ PACMAN_PACKAGES=(
 )
 
 AUR_PACKAGES=(
-    vicinae-bin doom-fire
+    vicinae-bin
 )
 
 # Rutas (relativas a configs/<componente>/) que Matugen regenera en cada
