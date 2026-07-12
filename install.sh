@@ -33,9 +33,6 @@ PACMAN_PACKAGES=(
 
 AUR_PACKAGES=(
     vicinae-bin doom-fire
-
-    # Apps para programar
-    codium postman-bin jetbrains-toolbox
 )
 
 # Rutas (relativas a configs/<componente>/) que Matugen regenera en cada
