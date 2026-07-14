@@ -25,7 +25,8 @@
       "Read(//home/luguito/Pictures/**)",
       "Read(//home/luguito/Pictures/Wallpapers/**)",
       "Read(//usr/share/icons/Bibata-Modern-Ice/cursors/**)",
-      "Bash(find / -iname \"*hyprcursor*\")"
+      "Bash(find / -iname \"*hyprcursor*\")",
+      "WebFetch(domain:github.com)"
     ]
   }
 }

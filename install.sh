@@ -174,7 +174,7 @@ configs(){
     ok "Listo"
 
     #Cursor
-    hyprctl setcursor Bibata-Modern-Ice 25 || true
+    hyprctl setcursor Bibata-Modern-Ice 20 || true
     hyprctl reload || true
 
     #ly
